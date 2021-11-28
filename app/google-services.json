@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517974095675",
+    "project_id": "jobhunt-1a0e4",
+    "storage_bucket": "jobhunt-1a0e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517974095675:android:ce0e1c4fe5fc743efe691e",
+        "android_client_info": {
+          "package_name": "com.example.jobhunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517974095675-6hk02r4be03q1lqv2h0qga24ijf3th1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqhTs2uQ6Lql8t69HOMrAa_tjS6W3FIZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517974095675-6hk02r4be03q1lqv2h0qga24ijf3th1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
