@@ -70,15 +70,16 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:textSize="15dp"
+                android:onClick="Direct"
                 android:layout_height="wrap_content"
-                android:text="New user?Registration"
-                 />
+                android:text="New user?Registration"/>
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="50dp"
                 android:layout_height="wrap_content"
+                android:onClick="Login"
                 android:layout_gravity="right"
                 android:text="Login"/>
         </LinearLayout>

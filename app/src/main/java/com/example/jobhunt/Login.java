@@ -1,11 +1,18 @@
 package com.example.jobhunt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
@@ -18,22 +25,41 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.username);
         password = findViewById(R.id.password);
     }
-    public void Login(View view){
+
+
+    public void Login(View view) {
         String emailid = email.getText().toString().trim();
         String passw = password.getText().toString().trim();
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        if (TextUtils.isEmpty(emailid)){
+            email.setError("email id is required");
+            return;
+        }
+        if (TextUtils.isEmpty(passw)){
+            password.setError("password is empty");
+            return;
+        }
+        if (passw.length()<8){
+            password.setError("password length must be 8 char long");
+            return;
+        }
+        auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Login.this,e.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+    public void Direct(View view) {
+
+
+    }
+
+
 }
