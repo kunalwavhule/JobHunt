@@ -9,7 +9,7 @@
     tools:context=".Register">
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/fname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -17,7 +17,7 @@
         android:hint="Name" />
 
     <EditText
-        android:id="@+id/remail"
+        android:id="@+id/eid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -25,7 +25,7 @@
         android:hint="Email id" />
 
     <EditText
-        android:id="@+id/rpassword"
+        android:id="@+id/pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -33,7 +33,7 @@
         android:hint="password" />
 
     <EditText
-        android:id="@+id/crpassword"
+        android:id="@+id/pwc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"

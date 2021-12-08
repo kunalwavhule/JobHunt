@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void Direct(View view) {
-
+        startActivity(new Intent(getApplicationContext(),Register.class));
 
     }
 
