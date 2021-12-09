@@ -8,72 +8,86 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
-    <TextView
-        android:id="@+id/textView5"
+    <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:text="REGISTER" />
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
-        android:layout_marginBottom="50dp"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/userjh" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="REGISTER"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/fname"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="267dp"
+            android:layout_height="145dp"
+            app:srcCompat="@drawable/userjh" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPersonName"
-        android:hint="Name" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/eid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:inputType="textEmailAddress"
-        android:hint="Email id" />
+        <EditText
+            android:id="@+id/fname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/pw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/eid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Email id"
+            android:inputType="textEmailAddress" />
 
-        android:inputType="textPassword"
-        android:hint="password" />
+        <EditText
+            android:id="@+id/pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <EditText
-        android:id="@+id/pwc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Confirm Password" />
+            android:hint="password"
+            android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/register"
-        android:layout_marginTop="20dp"
-        android:onClick="Register"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:text="Register" />
+        <EditText
+            android:id="@+id/pwc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
 
-    <TextView
-        android:id="@+id/rlogin"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="25dp"
-        android:layout_height="wrap_content"
-        android:onClick="Direct2"
-        android:longClickable="true"
-        android:text="Already Register?? Login" />
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="Register"
+            android:text="Register" />
+
+        <TextView
+            android:id="@+id/rlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:longClickable="true"
+            android:onClick="Direct2"
+            android:text="Already Register?? Login"
+            android:textSize="25dp" />
+    </LinearLayout>
+
 </LinearLayout>
