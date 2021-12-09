@@ -10,16 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
+            android:name=".PostJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".ForgetPassword"
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Login"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".SplachScreen"
             android:exported="true"

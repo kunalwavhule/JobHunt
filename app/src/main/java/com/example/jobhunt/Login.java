@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
 
         if (auth.getCurrentUser()!=null){
-            startActivity(new Intent(Login.this,MainActivity.class));
+            startActivity(new Intent(Login.this,HomeActivity.class));
         }
     }
 
@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
         auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
