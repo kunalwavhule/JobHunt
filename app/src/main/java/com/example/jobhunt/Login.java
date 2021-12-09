@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
     }
 
-
+    // Login the firebase code
     public void Login(View view) {
         String emailid = email.getText().toString().trim();
         String passw = password.getText().toString().trim();
@@ -55,13 +55,13 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-
+        // Redirect to Register Activity
     public void Direct(View view) {
         startActivity(new Intent(getApplicationContext(),Register.class));
 
     }
 
-
+        // Redirect to ForgetPassword
     public void ForgetPassword(View view) {
         startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
     }

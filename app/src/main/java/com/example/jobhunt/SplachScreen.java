@@ -12,6 +12,8 @@ public class SplachScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach_screen);
+
+        // Splach Screen code
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

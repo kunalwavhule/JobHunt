@@ -24,7 +24,7 @@ public class ForgetPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forget_password);
         emailid = findViewById(R.id.emailid);
     }
-
+    // Reset the password code
     public void Reset(View view) {
         String email = emailid.getText().toString().trim();
         if(email.isEmpty()){
