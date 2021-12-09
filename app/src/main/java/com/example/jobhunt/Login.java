@@ -24,6 +24,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         email = findViewById(R.id.username);
         password = findViewById(R.id.password);
+
+        if (auth.getCurrentUser()!=null){
+            startActivity(new Intent(Login.this,MainActivity.class));
+        }
     }
 
     // Login the firebase code
