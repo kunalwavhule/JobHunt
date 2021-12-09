@@ -10,6 +10,7 @@
         android:title="Save"/>
     <item android:id="@+id/menu_msg"
         android:icon="@drawable/message"
+
         android:title="Notification"/>
     <item android:id="@+id/menu_profile"
         android:icon="@drawable/account"
