@@ -1,18 +1,32 @@
 package com.example.jobhunt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.jobhunt.Model.Data;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
     Toolbar toolbar;
     EditText job_title,job_description,job_skill,job_salary;
     Button btn_post_job;
+    //firebase
+    FirebaseAuth auth;
+    private DatabaseReference mJobPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +35,12 @@ public class InsertJobPostActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.incert_job_toolbar);
         //setSupportActionBar(toolbar);
         //getSupportActionBar().setTitle("Post Job");
+        auth = FirebaseAuth.getInstance();
+        FirebaseUser mUser = auth.getCurrentUser();
+        String uid = mUser.getUid();
+
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uid);
+
         InsertJob();
 
     }
@@ -55,6 +75,14 @@ public class InsertJobPostActivity extends AppCompatActivity {
                     job_salary.setError("Required Feild....");
                     return;
                 }
+
+                String id = mJobPost.push().getKey();
+                String date = DateFormat.getDateInstance().format(new Date());
+                Data data = new Data(title,description,skill,salary,id,date);
+
+                mJobPost.child(id).setValue(data);
+                Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(),PostJobActivity.class));
 
 
             }
