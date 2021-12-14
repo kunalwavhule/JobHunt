@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Clogin">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Login"
+            android:text="Company Login"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="15dp"
             android:textSize="30dp"
@@ -63,7 +63,7 @@
             android:text="forget password"
             android:layout_gravity="right"
             android:textSize="15dp"
-            android:onClick="ForgetPassword"
+            android:onClick="CforgetPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,20 +74,20 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/newuser"
+                android:id="@+id/cnewcompany"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:textSize="15dp"
-                android:onClick="Direct"
+                android:onClick="CDirect"
                 android:layout_height="wrap_content"
-                android:text="New user?Registration"/>
+                android:text="New Company?Registration"/>
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="50dp"
                 android:layout_height="wrap_content"
-                android:onClick="Login"
+                android:onClick="Clogin"
                 android:layout_gravity="right"
                 android:text="Login"/>
         </LinearLayout>
@@ -107,14 +107,13 @@
             android:text="Admin"
             android:onClick="RedirectToAdminLogin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:ignore="UsingOnClickInXml" />
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/rcl"
+            android:id="@+id/rul"
             android:layout_marginLeft="50dp"
-            android:onClick="RedirectToCompanyLogin"
-            android:text="Company"
+            android:onClick="RedirectToUserLogin"
+            android:text="User"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

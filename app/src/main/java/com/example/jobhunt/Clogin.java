@@ -15,26 +15,30 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class Clogin extends AppCompatActivity {
     EditText email,password;
     FirebaseAuth auth = FirebaseAuth.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_clogin);
         email = findViewById(R.id.username);
         password = findViewById(R.id.password);
-
         if (auth.getCurrentUser()!=null){
-            startActivity(new Intent(Login.this,HomeActivity.class));
+            startActivity(new Intent(Clogin.this,PostJobActivity.class));
             finish();
         }
+
     }
 
-    // Login the firebase code
-    public void Login(View view) {
+    public void CforgetPassword(View view) {
+    }
+
+    public void CDirect(View view) {
+    }
+
+    public void CLogin(View view) {
         String emailid = email.getText().toString().trim();
         String passw = password.getText().toString().trim();
 
@@ -53,34 +57,19 @@ public class Login extends AppCompatActivity {
         auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                startActivity(new Intent(getApplicationContext(),PostJobActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Login.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(Clogin.this,e.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
     }
-        // Redirect to Register Activity
-    public void Direct(View view) {
-        startActivity(new Intent(getApplicationContext(),Register.class));
-        finish();
 
-    }
-
-        // Redirect to ForgetPassword
-    public void ForgetPassword(View view) {
-        startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
-        finish();
+    public void RedirectToUserLogin(View view) {
     }
 
     public void RedirectToAdminLogin(View view) {
-
-    }
-
-    public void RedirectToCompanyLogin(View view) {
-        startActivity(new Intent(getApplicationContext(),Clogin.class));
-        finish();
     }
 }

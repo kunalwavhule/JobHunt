@@ -17,8 +17,10 @@ public class HomeActivity extends AppCompatActivity {
 
     public void SearchJoB(View view) {
         startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        finish();
     }
     public void PostJoB(View view) {
         startActivity(new Intent(getApplicationContext(),PostJobActivity.class));
+        finish();
     }
 }
