@@ -75,12 +75,12 @@ public class Login extends AppCompatActivity {
         finish();
     }
 
+    //redirect to Login Screen
     public void RedirectToAdminLogin(View view) {
-
-    }
-
-    public void RedirectToCompanyLogin(View view) {
-        startActivity(new Intent(getApplicationContext(),Clogin.class));
+        startActivity(new Intent(getApplicationContext(),AdminLogin.class));
         finish();
+
     }
+
+
 }
