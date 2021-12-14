@@ -11,6 +11,7 @@
         android:theme="@style/Theme.JobHunt" >
         <activity
             android:name=".AdminLogin"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".InsertJobPostActivity"

@@ -72,7 +72,6 @@ public class Login extends AppCompatActivity {
         // Redirect to ForgetPassword
     public void ForgetPassword(View view) {
         startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
-        finish();
     }
 
     //redirect to Login Screen

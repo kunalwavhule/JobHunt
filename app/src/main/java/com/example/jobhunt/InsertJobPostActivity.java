@@ -32,9 +32,6 @@ public class InsertJobPostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_job_post);
-        toolbar = findViewById(R.id.incert_job_toolbar);
-        //setSupportActionBar(toolbar);
-        //getSupportActionBar().setTitle("Post Job");
         auth = FirebaseAuth.getInstance();
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();

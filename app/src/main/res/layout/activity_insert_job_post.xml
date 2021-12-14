@@ -8,10 +8,15 @@
     android:layout_height="match_parent"
     tools:context=".InsertJobPostActivity">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/incert_job_toolbar"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:background="@color/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post Job" />
 
-  <ScrollView
+    <ScrollView
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
       <LinearLayout
