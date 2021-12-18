@@ -24,7 +24,6 @@
 
         <TextView
             android:id="@+id/job_date"
-            android:textColor="FFABF4AE"
             android:padding="10dp"
             android:maxLines="1"
             android:textAppearance="?android:textAppearanceSmall"
