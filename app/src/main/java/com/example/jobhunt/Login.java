@@ -125,12 +125,5 @@ public class Login extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
     }
 
-    //redirect to Login Screen
-    public void RedirectToAdminLogin(View view) {
-        startActivity(new Intent(getApplicationContext(),AdminLogin.class));
-        finish();
-
-    }
-
 
 }

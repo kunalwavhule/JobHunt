@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
+            android:name=".RecruiterRegister"
+            android:exported="false" />
+        <activity
             android:name=".AdminDashBoard"
             android:exported="false" />
         <activity
