@@ -10,15 +10,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.jobhunt.Model.UserData;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class Register extends AppCompatActivity {
     EditText fname,eid,pw,pwc;
     FirebaseAuth auth = FirebaseAuth.getInstance();
-
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +34,7 @@ public class Register extends AppCompatActivity {
         eid= findViewById(R.id.eid);
         pw= findViewById(R.id.pw);
         pwc = findViewById(R.id.pwc);
+
 
         if (auth.getCurrentUser()!=null){
             startActivity(new Intent(Register.this,MainActivity.class));
@@ -59,6 +67,14 @@ public class Register extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(emailid,password1).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
+
+                //save data in firebase database
+                String date = DateFormat.getDateInstance().format(new Date());
+                String id = authResult.getUser().getUid();
+
+                UserData userData = new UserData(id,fullname,emailid,password1,date,1);
+                firebaseDatabase.getReference().child("User").child(id).setValue(userData);
+
                 Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }

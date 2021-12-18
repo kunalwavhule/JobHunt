@@ -41,12 +41,6 @@ public class PostJobActivity extends AppCompatActivity {
 
         // recyclerview
 
-        recyclerView.findViewById(R.id.recycler_job_post_id);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setStackFromEnd(true);
-        layoutManager.setReverseLayout(true);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(layoutManager);
 
         fabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,60 +51,5 @@ public class PostJobActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        FirebaseRecyclerOptions<Data> options = new FirebaseRecyclerOptions.Builder<Data>()
-                .setQuery(JobPostDatabase,Data.class)
-                .build();
-
-        FirebaseRecyclerAdapter<Data, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, MyViewHolder>(options) {
-            @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Data model) {
-
-            }
-
-            @NonNull
-            @Override
-            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.job_post_item,parent,true);
-                return new MyViewHolder(view);
-            }
-        };
-
-
-       }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-
-        View myview;
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            myview = itemView;
-        }
-        public void setJobTitle(String title){
-            TextView mTitle = myview.findViewById(R.id.job_title);
-            mTitle.setText(title);
-        }
-        public void setJobDate(String date){
-            TextView mDate = myview.findViewById(R.id.job_date);
-            mDate.setText(date);
-        }
-        public void setJobDescription(String description){
-            TextView mDescription = myview.findViewById(R.id.job_description);
-            mDescription.setText(description);
-        }
-        public void setJobSkills(String skills){
-            TextView mSkills = myview.findViewById(R.id.job_skill);
-            mSkills.setText(skills);
-        }
-
-        public void setJobSalary(String salary){
-            TextView mSalary = myview.findViewById(R.id.job_salary);
-            mSalary.setText(salary);
-        }
-    }
 }
 

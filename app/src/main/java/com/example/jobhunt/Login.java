@@ -14,10 +14,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
     EditText email,password;
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
 
     @Override
@@ -28,8 +34,30 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
 
         if (auth.getCurrentUser()!=null){
-            startActivity(new Intent(Login.this,HomeActivity.class));
-            finish();
+
+            FirebaseUser mUser = auth.getCurrentUser();
+            String uid = mUser.getUid();
+            firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int userTypes = snapshot.getValue(Integer.class);
+                    if (userTypes == 0){
+                        Intent in = new Intent(Login.this,HomeActivity.class);
+                        startActivity(in);
+                    }
+                    if (userTypes == 1){
+                        startActivity(new Intent(getApplicationContext(),AdminDashBoard.class));
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
         }
     }
 
@@ -53,7 +81,30 @@ public class Login extends AppCompatActivity {
         auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+
+                String uid = authResult.getUser().getUid();
+                firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int userTypes = snapshot.getValue(Integer.class);
+                        if (userTypes == 0){
+                            Intent in = new Intent(Login.this,HomeActivity.class);
+                            startActivity(in);
+                        }
+                        if (userTypes == 1){
+                            startActivity(new Intent(getApplicationContext(),AdminDashBoard.class));
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
