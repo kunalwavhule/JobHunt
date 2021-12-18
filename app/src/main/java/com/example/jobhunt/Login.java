@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
                         startActivity(in);
                     }
                     if (userTypes == 1){
-                        startActivity(new Intent(getApplicationContext(),AdminDashBoard.class));
+                        Toast.makeText(getApplicationContext(),"invalid user",Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -92,7 +92,7 @@ public class Login extends AppCompatActivity {
                             startActivity(in);
                         }
                         if (userTypes == 1){
-                            startActivity(new Intent(getApplicationContext(),AdminDashBoard.class));
+                            Toast.makeText(getApplicationContext(),"invalid user",Toast.LENGTH_LONG).show();
                         }
 
                     }

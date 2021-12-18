@@ -14,10 +14,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AdminLogin extends AppCompatActivity {
     FirebaseAuth auth = FirebaseAuth.getInstance();
     EditText AdminUsername,AdminPassword;
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +64,33 @@ public class AdminLogin extends AppCompatActivity {
         auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(getApplicationContext(),AdminDashBoard.class));
+
+                String uid = authResult.getUser().getUid();
+                firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int userTypes = snapshot.getValue(Integer.class);
+                        if (userTypes == 0){
+                            Toast.makeText(getApplicationContext(),"invalid user",Toast.LENGTH_LONG).show();
+
+                          }
+                        if (userTypes == 1){
+                            Intent in = new Intent(AdminLogin.this,AdminDashBoard.class);
+                            startActivity(in);
+
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
