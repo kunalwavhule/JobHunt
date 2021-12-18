@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
+            android:name=".AdminDashBoard"
+            android:exported="false" />
+        <activity
             android:name=".RecruiterLogin"
             android:exported="false" />
         <activity
             android:name=".UserTypes"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".AdminLogin"
             android:exported="false"
