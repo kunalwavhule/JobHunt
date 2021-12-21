@@ -57,16 +57,12 @@ public class AdminLogin extends AppCompatActivity {
             AdminPassword.setError("password is empty");
             return;
         }
-        if (passw.length()<8){
-            AdminPassword.setError("password length must be 8 char long");
-            return;
-        }
         auth.signInWithEmailAndPassword(emailid,passw).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
 
                 String uid = authResult.getUser().getUid();
-                firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
+                firebaseDatabase.getReference().child("Recruiter").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int userTypes = snapshot.getValue(Integer.class);
@@ -75,6 +71,10 @@ public class AdminLogin extends AppCompatActivity {
 
                           }
                         if (userTypes == 1){
+                            Toast.makeText(getApplicationContext(),"invalid user",Toast.LENGTH_LONG).show();
+
+                        }
+                        if (userTypes == 2){
                             Intent in = new Intent(AdminLogin.this,AdminDashBoard.class);
                             startActivity(in);
 

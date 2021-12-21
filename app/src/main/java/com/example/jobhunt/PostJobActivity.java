@@ -51,5 +51,10 @@ public class PostJobActivity extends AppCompatActivity {
         });
     }
 
+    public void Logout(View view) {
+        mAuth.signOut();
+        startActivity(new Intent(getApplicationContext(),RecruiterLogin.class));
+        finish();
+    }
 }
 

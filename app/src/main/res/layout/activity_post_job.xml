@@ -12,10 +12,14 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_job_post_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:onClick="Logout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Log out"
+            tools:ignore="OnClick" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,5 +31,13 @@
         android:clickable="true"
         android:src="@drawable/add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_job_post_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-19dp"
+        tools:layout_editor_absoluteY="193dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
