@@ -1,6 +1,7 @@
 package com.example.jobhunt.Model;
 
-public class RecruiterData {
+public class ApplicantData {
+
     String id;
     String fullname;
     String email;
@@ -10,7 +11,7 @@ public class RecruiterData {
     String date;
     int UserTypes;
 
-    public RecruiterData(String id, String fullname, String email, String password, String gender, String phoneno, String date, int userTypes) {
+    public ApplicantData(String id, String fullname, String email, String password, String gender, String phoneno, String date, int userTypes) {
         this.id = id;
         this.fullname = fullname;
         this.email = email;
@@ -27,14 +28,6 @@ public class RecruiterData {
 
     public void setUserTypes(int userTypes) {
         UserTypes = userTypes;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getId() {
@@ -83,5 +76,13 @@ public class RecruiterData {
 
     public void setPhoneno(String phoneno) {
         this.phoneno = phoneno;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

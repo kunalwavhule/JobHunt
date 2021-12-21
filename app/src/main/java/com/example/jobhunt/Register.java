@@ -10,61 +10,73 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.jobhunt.Model.UserData;
+import com.example.jobhunt.Model.ApplicantData;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Date;
 
 public class Register extends AppCompatActivity {
-    EditText fname,eid,pw,pwc;
+    EditText aprname,apremailid,aprpw,aprcpw,aprgender,aprphoneno;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        fname= findViewById(R.id.fname);
-        eid= findViewById(R.id.eid);
-        pw= findViewById(R.id.pw);
-        pwc = findViewById(R.id.pwc);
+       aprname = findViewById(R.id.aprname);
+       apremailid = findViewById(R.id.apremailid);
+       aprpw = findViewById(R.id.aprpassword);
+       aprcpw = findViewById(R.id.aprcpw);
+       aprgender = findViewById(R.id.aprgender);
+       aprphoneno = findViewById(R.id.aprphoneno);
 
-
-        if (auth.getCurrentUser()!=null){
-            startActivity(new Intent(Register.this,MainActivity.class));
-        }
     }
 
-    public void Direct2(View view) {
+    public void Back(View view) {
         startActivity(new Intent(getApplicationContext(),Login.class));
-
     }
-        // Register the user in firebase.
-    public void Register(View view) {
-        String fullname = fname.getText().toString();
-        String emailid = eid.getText().toString().trim();
-        String password1 = pw.getText().toString().trim();
-        String cpassword = pwc.getText().toString().trim();
 
-        if (TextUtils.isEmpty(fullname)){
-            fname.setError("Name Required");
+    public void RedirectToApplicant(View view) {
+        startActivity(new Intent(getApplicationContext(),Login.class));
+    }
+
+    public void ApplicantRegister(View view) {
+        String apname = aprname.getText().toString();
+        String apemailid = apremailid.getText().toString().trim();
+        String appassword = aprpw.getText().toString().trim();
+        String apcpassword = aprcpw.getText().toString().trim();
+        String apgender = aprgender.getText().toString().trim();
+        String apphoneno = aprphoneno.getText().toString().trim();
+
+
+        if (TextUtils.isEmpty(apname)){
+            aprname.setError("Name Required");
             return;
         }
-        if (TextUtils.isEmpty(password1)){
-            pw.setError("password required");
+        if (TextUtils.isEmpty(appassword)){
+            aprpw.setError("password required");
             return;
         }
-        if (!password1.equals(cpassword)){
-            pwc.setError("password does not same");
+        if (!appassword.equals(apcpassword)){
+            aprcpw.setError("password does not same");
             return;
         }
-        auth.createUserWithEmailAndPassword(emailid,password1).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        if (TextUtils.isEmpty(apgender)){
+            aprgender.setError("password required");
+            return;
+        }
+        if (TextUtils.isEmpty(apphoneno)){
+            aprphoneno.setError("password required");
+            return;
+        }
+
+
+        auth.createUserWithEmailAndPassword(apemailid,appassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
 
@@ -72,8 +84,8 @@ public class Register extends AppCompatActivity {
                 String date = DateFormat.getDateInstance().format(new Date());
                 String id = authResult.getUser().getUid();
 
-                UserData userData = new UserData(id,fullname,emailid,password1,date,1);
-                firebaseDatabase.getReference().child("User").child(id).setValue(userData);
+                ApplicantData applicantData = new ApplicantData(id,apname,apemailid,appassword,apgender,apphoneno,date,0);
+                firebaseDatabase.getReference().child("Applicant").child(id).setValue(applicantData);
 
                 Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(),Login.class));
@@ -81,9 +93,8 @@ public class Register extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-              Toast.makeText(Register.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(Register.this,e.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }

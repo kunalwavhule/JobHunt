@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Login">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/ral"
-            android:layout_width="wrap_content"
+            android:id="@+id/back"
+            android:onClick="Back"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:onClick="RedirectToAdminLogin"
-            android:text="Admin"
+            android:background="@drawable/arrow_back"
+            android:layout_gravity="left"
             tools:ignore="UsingOnClickInXml" />
 
         <TextView
@@ -113,5 +116,6 @@
         android:orientation="horizontal">
 
     </LinearLayout>
+  </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

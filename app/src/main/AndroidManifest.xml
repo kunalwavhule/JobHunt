@@ -33,10 +33,6 @@
             android:name=".PostJobActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
             android:name=".ForgetPassword"
             android:exported="false" />
         <activity

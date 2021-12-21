@@ -6,92 +6,112 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".RecruiterLogin">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="15dp"
-            android:text="Recruiter Login"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="267dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="61dp"
-            app:srcCompat="@drawable/recruiters" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/recruiterusername"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textEmailAddress"/>
-
-        <EditText
-            android:id="@+id/recruiterpassword"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/rfpsw"
-            android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="forget password"
-            android:layout_gravity="right"
-            android:textSize="15dp"
-            android:onClick="RecruitersForgetPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_height="match_parent">>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/newrecruiter"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:textSize="15dp"
-                android:onClick="RedirectToRecruitersRegistration"
-                android:layout_height="wrap_content"
-                android:text="New Recruiter?Registration"/>
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="50dp"
+                android:id="@+id/back"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:onClick="RecruiterLogin"
-                android:layout_gravity="right"
-                android:text="Login"/>
+                android:layout_gravity="left"
+                android:background="@drawable/arrow_back"
+                android:onClick="Back"
+                tools:ignore="UsingOnClickInXml" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Recruiter Login"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="267dp"
+                    android:layout_height="145dp"
+                    android:layout_marginStart="61dp"
+                    app:srcCompat="@drawable/recruiters" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/recruiterusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/recruiterpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:hint="password"
+                    android:inputType="textPassword" />
+
+                <TextView
+                    android:id="@+id/rfpsw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="25dp"
+                    android:onClick="RecruitersForgetPassword"
+                    android:text="forget password"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/newrecruiter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="RedirectToRecruitersRegistration"
+                        android:text="New Recruiter?Registration"
+                        android:textSize="15dp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="50dp"
+                        android:onClick="RecruiterLogin"
+                        android:text="Login" />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

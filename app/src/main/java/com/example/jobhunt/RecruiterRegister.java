@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.jobhunt.Model.RecruiterData;
-import com.example.jobhunt.Model.UserData;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -80,7 +79,7 @@ public class RecruiterRegister extends AppCompatActivity {
                 String date = DateFormat.getDateInstance().format(new Date());
                 String id = authResult.getUser().getUid();
 
-                RecruiterData recruiterData = new RecruiterData(id,recruitername,recruiteremailid,recruiterpassword,recruitergender,recruiterphoneno,date);
+                RecruiterData recruiterData = new RecruiterData(id,recruitername,recruiteremailid,recruiterpassword,recruitergender,recruiterphoneno,date,1);
 
                 firebaseDatabase.getReference().child("Recruiter").child(id).setValue(recruiterData);
 
@@ -99,6 +98,11 @@ public class RecruiterRegister extends AppCompatActivity {
     }
 
     public void RedirectToRecruitersLogin(View view) {
+        startActivity(new Intent(getApplicationContext(),RecruiterLogin.class));
+        finish();
+    }
+
+    public void Back(View view) {
         startActivity(new Intent(getApplicationContext(),RecruiterLogin.class));
         finish();
     }

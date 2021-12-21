@@ -3,6 +3,7 @@ package com.example.jobhunt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -43,5 +44,9 @@ public class ForgetPassword extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void Back(View view) {
+        startActivity(new Intent(getApplicationContext(),Login.class));
     }
 }
