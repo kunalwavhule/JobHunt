@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
+            android:name=".AdminJobPost"
+            android:exported="false" />
+        <activity
+            android:name=".AdminRecruiter"
+            android:exported="false" />
+        <activity
             android:name=".AdminApplicant"
             android:exported="false" />
         <activity

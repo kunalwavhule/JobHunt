@@ -27,4 +27,14 @@ public class AdminDashBoard extends AppCompatActivity {
     public void AdminApplicant(View view) {
         startActivity(new Intent(getApplicationContext(),AdminApplicant.class));
     }
+
+    public void AdminRecruiter(View view) {
+        startActivity(new Intent(getApplicationContext(),AdminRecruiter.class));
+
+    }
+
+    public void AdminJobPost(View view) {
+        startActivity(new Intent(getApplicationContext(),AdminJobPost.class));
+
+    }
 }
