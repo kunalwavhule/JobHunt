@@ -27,7 +27,20 @@
             android:text="Log Out" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/aapplicant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="AdminApplicant"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Applicant"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/Arecruiter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -35,22 +48,17 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Applicant" />
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="Recruiters" />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/Ajobpost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Job Post" />
 
     </LinearLayout>

@@ -10,6 +10,9 @@ public class Data {
     String date;
     int UserTypes;
 
+    public Data() {
+    }
+
     public Data(String id, String fullname, String email, String password, String phoneno, String date, int userTypes) {
         this.id = id;
         this.fullname = fullname;

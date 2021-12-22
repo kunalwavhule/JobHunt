@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/idap"
+            android:text="Id"
+            android:textStyle="italic"            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/fullnameap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Full Name"
+            android:textColor="@color/black"
+            android:layout_below="@+id/idap"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailap"
+            android:text="Email id"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_below="@id/fullnameap"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phonenoap"
+            android:text="Phone Number"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_below="@id/emailap"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/dateap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="date"
+            android:layout_toRightOf="@+id/idap"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

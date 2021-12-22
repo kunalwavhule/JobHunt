@@ -35,7 +35,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Conform Password"
+            android:hint="Confirm Password"
             android:id="@+id/cpassword"
             android:layout_below="@+id/password"
             android:drawableLeft="@drawable/arrow_back"/>
