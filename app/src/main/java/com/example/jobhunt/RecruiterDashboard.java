@@ -97,15 +97,29 @@ public class RecruiterDashboard extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
+                txtSearch(s);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String s) {
+                txtSearch(s);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
+
+    }
+
+    private void txtSearch(String str){
+
+        FirebaseRecyclerOptions<PostJobData> options =
+                new FirebaseRecyclerOptions.Builder<PostJobData>()
+                        .setQuery(mJobPost.orderByChild("title").startAt(str).endAt(str+"~"), PostJobData.class)
+                        .build();
+        postJobAdapter = new PostJobAdapter(options);
+        postJobAdapter.startListening();
+        recyclerView.setAdapter(postJobAdapter);
 
     }
 
