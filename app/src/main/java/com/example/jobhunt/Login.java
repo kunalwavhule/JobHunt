@@ -33,38 +33,7 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
-        if (auth.getCurrentUser()!=null){
 
-            FirebaseUser mUser = auth.getCurrentUser();
-            String uid = mUser.getUid();
-            firebaseDatabase.getReference().child("Applicant").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    int userTypes = snapshot.getValue(Integer.class);
-                    if (userTypes == 0){
-                        Intent in = new Intent(Login.this,MainActivity.class);
-                        startActivity(in);
-                    }
-                    if (userTypes == 1){
-                        Intent in = new Intent(Login.this,RecruiterDashboard.class);
-                        startActivity(in);
-                    }
-                    if (userTypes == 2){
-                        Intent in = new Intent(Login.this,AdminDashBoard.class);
-                        startActivity(in);
-                    }
-
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-
-        }
     }
 
     // Login the firebase code
