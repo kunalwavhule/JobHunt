@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/name"
+            android:drawableLeft="@drawable/arrow_back"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/email"
+            android:layout_below="@+id/name"
+            android:drawableLeft="@drawable/arrow_back"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:id="@+id/password"
+            android:layout_below="@+id/email"
+            android:drawableLeft="@drawable/arrow_back"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Conform Password"
+            android:id="@+id/cpassword"
+            android:layout_below="@+id/password"
+            android:drawableLeft="@drawable/arrow_back"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number"
+            android:id="@+id/phoneno"
+            android:layout_below="@+id/cpassword"
+            android:drawableLeft="@drawable/arrow_back"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register as Applicant"
+            android:id="@+id/recruiter"
+            android:layout_below="@+id/phoneno"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register as Recruiter"
+            android:id="@+id/applicant"
+            android:gravity="center"
+            android:layout_below="@+id/phoneno"
+            android:layout_toRightOf="@+id/recruiter"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Register"
+            android:layout_below="@+id/recruiter"
+            android:layout_marginTop="20dp"
+            android:text="register"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
