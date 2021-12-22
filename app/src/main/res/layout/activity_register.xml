@@ -50,16 +50,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register as Applicant"
-            android:id="@+id/recruiter"
+            android:id="@+id/applicant"
             android:layout_below="@+id/phoneno"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register as Recruiter"
-            android:id="@+id/applicant"
+            android:id="@+id/recruiter"
             android:gravity="center"
             android:layout_below="@+id/phoneno"
-            android:layout_toRightOf="@+id/recruiter"/>
+            android:layout_toRightOf="@+id/applicant"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

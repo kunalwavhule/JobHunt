@@ -19,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AdminJobPost extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ApplicantAdapter applicantAdapter;
     PostJobAdapter postJobAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
@@ -36,7 +35,7 @@ public class AdminJobPost extends AppCompatActivity {
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uid);
 
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
