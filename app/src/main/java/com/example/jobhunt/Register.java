@@ -98,18 +98,10 @@ public class Register extends AppCompatActivity {
                 String id = authResult.getUser().getUid();
 
                 Data data = new Data(id,rname,remail,rpassword,rphoneno,date,types);
-                if(types == 0){
-                    firebaseDatabase.getReference().child("Applicant").child(id).setValue(data);
-                    Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
 
-                }
-                if (types == 1){
-                    firebaseDatabase.getReference().child("Recruiter").child(id).setValue(data);
-                    Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
 
-                }
-             //   firebaseDatabase.getReference().child("Applicant").child(id).setValue(data);
-              //  Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
+               firebaseDatabase.getReference().child("User").child(id).setValue(data);
+               Toast.makeText(Register.this,"Register successfully",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(),Login.class));
 
 

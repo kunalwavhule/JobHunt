@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,12 +19,6 @@ public class AdminDashBoard extends AppCompatActivity {
         setContentView(R.layout.activity_admin_dash_board);
     }
 
-    public void Logout(View view) {
-        auth.signOut();
-
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
 
     public void AdminApplicant(View view) {
         startActivity(new Intent(getApplicationContext(),AdminApplicant.class));
@@ -36,5 +32,22 @@ public class AdminDashBoard extends AppCompatActivity {
     public void AdminJobPost(View view) {
         startActivity(new Intent(getApplicationContext(),AdminJobPost.class));
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout,menu);
+        MenuItem logout = menu.findItem(R.id.lagout);
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(),Login.class));
+                finish();
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

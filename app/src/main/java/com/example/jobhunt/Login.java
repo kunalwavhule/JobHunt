@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
 
                 String uid = authResult.getUser().getUid();
-                firebaseDatabase.getReference().child("Applicant").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
+                firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int userTypes = snapshot.getValue(Integer.class);

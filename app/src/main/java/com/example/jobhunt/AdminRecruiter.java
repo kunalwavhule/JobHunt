@@ -36,11 +36,11 @@ public class AdminRecruiter extends AppCompatActivity {
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Recruiter");
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("User");
 
         FirebaseRecyclerOptions<Data> options =
                 new FirebaseRecyclerOptions.Builder<Data>()
-                        .setQuery(mJobPost, Data.class)
+                        .setQuery(mJobPost.orderByChild("userTypes").equalTo(1), Data.class)
                         .build();
 
         applicantAdapter = new ApplicantAdapter(options);

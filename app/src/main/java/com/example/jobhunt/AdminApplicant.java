@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,11 +38,11 @@ public class AdminApplicant extends AppCompatActivity {
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Applicant");
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("User");
 
         FirebaseRecyclerOptions<Data> options =
                 new FirebaseRecyclerOptions.Builder<Data>()
-                        .setQuery(mJobPost, Data.class)
+                        .setQuery(mJobPost.orderByChild("userTypes").equalTo(0), Data.class)
                         .build();
 
         applicantAdapter = new ApplicantAdapter(options);
@@ -67,8 +68,21 @@ public class AdminApplicant extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.logout,menu);
+        MenuItem logoutitem = menu.findItem(R.id.lagout);
+        logoutitem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(),Login.class));
+                finish();
+                return false;
+            }
+        });
         MenuItem item = menu.findItem(R.id.search);
+
         SearchView searchView = (SearchView) item.getActionView();
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

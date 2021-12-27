@@ -19,14 +19,6 @@
             android:text="Admin DashBoard" />
 
         <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_gravity="right"
-            android:onClick="Logout"
-            android:layout_height="wrap_content"
-            android:text="Log Out" />
-
-        <Button
             android:id="@+id/aapplicant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

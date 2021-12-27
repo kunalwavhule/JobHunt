@@ -6,9 +6,12 @@
     app:cardElevation="6dp"
     app:cardUseCompatPadding="true"
     android:layout_height="wrap_content">
-    <RelativeLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"><RelativeLayout
         android:layout_width="match_parent"
         android:padding="15dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content">
 
 
@@ -17,7 +20,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/idap"
             android:text="Id"
-            android:textStyle="italic"            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textColor="@color/black"
             android:layout_marginLeft="10dp"/>
         <TextView
             android:id="@+id/fullnameap"
@@ -56,11 +60,29 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="date"
-            android:layout_toRightOf="@+id/idap"
+            android:layout_below="@+id/phonenoap"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="italic" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+
+
+        <Button
+            android:id="@+id/deletebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"/>
+    </RelativeLayout>
+    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

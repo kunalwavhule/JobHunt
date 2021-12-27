@@ -6,9 +6,14 @@
     app:cardElevation="6dp"
     app:cardUseCompatPadding="true"
     android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:padding="15dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content">
 
 
@@ -65,5 +70,29 @@
 
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
 
-</androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/editbtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit" />
+
+        <Button
+            android:id="@+id/deletebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editbtn"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"/>
+    </RelativeLayout>
+</LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
