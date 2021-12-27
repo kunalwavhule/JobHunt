@@ -12,38 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
-            android:name=".AdminJobPost"
-            android:parentActivityName=".AdminDashBoard"
+            android:name=".ForgetPassword"
+            android:parentActivityName=".Login"
             android:exported="false" />
+        <activity
+            android:name=".AdminJobPost"
+            android:exported="false"
+            android:parentActivityName=".AdminDashBoard" />
         <activity
             android:name=".AdminRecruiter"
-            android:parentActivityName=".AdminDashBoard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AdminDashBoard" />
         <activity
             android:name=".AdminApplicant"
-            android:parentActivityName=".AdminDashBoard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AdminDashBoard" />
         <activity
             android:name=".AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".InsertJobPostActivity"
-            android:parentActivityName=".RecruiterDashboard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".RecruiterDashboard" />
         <activity
             android:name=".RecruiterDashboard"
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:parentActivityName=".Login"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Login" />
         <activity
             android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
