@@ -70,12 +70,6 @@ public class RecruiterDashboard extends AppCompatActivity {
 
     }
 
-    public void Logout(View view) {
-        auth.signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -91,8 +85,19 @@ public class RecruiterDashboard extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.logout,menu);
+        MenuItem logout = menu.findItem(R.id.lagout);
         MenuItem item = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) item.getActionView();
+
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(),Login.class));
+                return false;
+            }
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

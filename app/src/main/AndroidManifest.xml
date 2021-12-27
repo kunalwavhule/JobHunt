@@ -13,24 +13,29 @@
         android:theme="@style/Theme.JobHunt">
         <activity
             android:name=".AdminJobPost"
+            android:parentActivityName=".AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".AdminRecruiter"
+            android:parentActivityName=".AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".AdminApplicant"
+            android:parentActivityName=".AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".InsertJobPostActivity"
+            android:parentActivityName=".RecruiterDashboard"
             android:exported="false" />
         <activity
             android:name=".RecruiterDashboard"
             android:exported="false" />
         <activity
             android:name=".Register"
+            android:parentActivityName=".Login"
             android:exported="false" />
         <activity
             android:name=".Login"

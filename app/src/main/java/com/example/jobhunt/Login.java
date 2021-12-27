@@ -65,14 +65,17 @@ public class Login extends AppCompatActivity {
                         if (userTypes == 0){
                             Intent in = new Intent(Login.this,MainActivity.class);
                             startActivity(in);
+                            finish();
                         }
                         if (userTypes == 1){
                             Intent in = new Intent(Login.this,RecruiterDashboard.class);
                             startActivity(in);
+                            finish();
                         }
                         if (userTypes == 2){
                             Intent in = new Intent(Login.this,AdminDashBoard.class);
                             startActivity(in);
+                            finish();
                         }
 
 
