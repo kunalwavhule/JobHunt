@@ -83,6 +83,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 mJobPost.child(id).setValue(postJobData);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(),RecruiterDashboard.class));
+                finish();
 
 
             }
