@@ -39,7 +39,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uid);
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
 
         InsertJob();
 
@@ -78,7 +78,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
                 String id = mJobPost.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-                PostJobData postJobData = new PostJobData(title,description,skill,salary,id,date);
+                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date);
 
                 mJobPost.child(id).setValue(postJobData);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();

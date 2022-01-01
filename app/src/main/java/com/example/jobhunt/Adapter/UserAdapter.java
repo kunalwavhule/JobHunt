@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Adapter;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,12 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobhunt.Model.Data;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ApplicantAdapter extends FirebaseRecyclerAdapter<Data,ApplicantAdapter.myViewHolder> {
-
+public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myViewHolder> {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -26,12 +26,13 @@ public class ApplicantAdapter extends FirebaseRecyclerAdapter<Data,ApplicantAdap
      *
      * @param options
      */
-    public ApplicantAdapter(@NonNull FirebaseRecyclerOptions<Data> options) {
+    public UserAdapter(@NonNull FirebaseRecyclerOptions<Data> options) {
         super(options);
     }
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Data model) {
+
         holder.id.setText(model.getId());
         holder.fullname.setText(model.getFullname());
         holder.email.setText(model.getEmail());
@@ -67,11 +68,13 @@ public class ApplicantAdapter extends FirebaseRecyclerAdapter<Data,ApplicantAdap
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_item,parent,false);
-        return new ApplicantAdapter.myViewHolder(view);
+        return new UserAdapter.myViewHolder(view);
+
 
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
+
         TextView id, fullname, email,phoneno ,date;
         Button delete;
 

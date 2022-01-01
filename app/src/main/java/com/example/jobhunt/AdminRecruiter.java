@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
+import com.example.jobhunt.Adapter.UserAdapter;
 import com.example.jobhunt.Model.Data;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AdminRecruiter extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ApplicantAdapter applicantAdapter;
+    UserAdapter userAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
 
@@ -44,9 +45,8 @@ public class AdminRecruiter extends AppCompatActivity {
                         .setQuery(mJobPost.orderByChild("userTypes").equalTo(1), Data.class)
                         .build();
 
-        applicantAdapter = new ApplicantAdapter(options);
-        recyclerView.setAdapter(applicantAdapter);
-
+        userAdapter = new UserAdapter(options);
+        recyclerView.setAdapter(userAdapter);
 
 
     }
@@ -55,13 +55,13 @@ public class AdminRecruiter extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        applicantAdapter.startListening();
+        userAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        applicantAdapter.stopListening();
+        userAdapter.stopListening();
     }
 
     @Override
@@ -106,9 +106,9 @@ public class AdminRecruiter extends AppCompatActivity {
                         .setQuery(mJobPost.orderByChild("fullname").startAt(str).endAt(str+"~"), Data.class)
                         .build();
 
-        applicantAdapter = new ApplicantAdapter(options);
-        applicantAdapter.startListening();
-        recyclerView.setAdapter(applicantAdapter);
+        userAdapter = new UserAdapter(options);
+        userAdapter.startListening();
+        recyclerView.setAdapter(userAdapter);
 
     }
 }

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
+import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Model.PostJobData;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -39,17 +40,15 @@ public class RecruiterDashboard extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         auth = FirebaseAuth.getInstance();
-        FirebaseUser mUser = auth.getCurrentUser();
-        String uid = mUser.getUid();
 
 
 
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uid);
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
 
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJobPost, PostJobData.class)
+                        .setQuery(mJobPost.orderByChild("id").equalTo(auth.getUid()), PostJobData.class)
                         .build();
 
         postJobAdapter = new PostJobAdapter(options);

@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
+import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Model.PostJobData;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +36,7 @@ public class AdminJobPost extends AppCompatActivity {
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uid);
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
 
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()

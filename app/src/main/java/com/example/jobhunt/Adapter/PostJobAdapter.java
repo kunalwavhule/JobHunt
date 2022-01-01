@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Adapter;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,7 +27,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobAdapter.myViewHolder> {
+public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder> {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -39,7 +40,7 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobA
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull PostJobData model) {
+    protected void onBindViewHolder(@NonNull com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder holder, int position, @NonNull PostJobData model) {
 
         holder.title.setText(model.getTitle());
         holder.description.setText(model.getDescription());
@@ -83,11 +84,11 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobA
                         map.put("skill",skill.getText().toString());
                         map.put("salary",salary.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(FirebaseAuth.getInstance().getUid()).child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                           Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
-                            dialogPlus.dismiss();
+                                Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                                dialogPlus.dismiss();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -113,7 +114,7 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobA
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(FirebaseAuth.getInstance().getUid()).child(getRef(position).getKey()).removeValue();  }
+                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).removeValue();  }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -130,9 +131,9 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobA
 
     @NonNull
     @Override
-    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_job_item,parent,false);
-        return new myViewHolder(view);
+        return new com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder(view);
 
     }
 
@@ -152,6 +153,6 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,PostJobA
             btnDelete = itemView.findViewById(R.id.deletebtn);
 
 
-            }
+        }
     }
 }
