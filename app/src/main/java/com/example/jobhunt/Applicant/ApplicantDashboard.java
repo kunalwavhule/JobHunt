@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
 import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
@@ -22,7 +23,7 @@ public class ApplicantDashboard extends AppCompatActivity {
 
     FirebaseAuth auth;
     RecyclerView recyclerView;
-    PostJobAdapter postJobAdapter;
+    ApplicantPostJobAdapter applicantPostJobAdapter;
     private DatabaseReference mJobPost;
 
     @Override
@@ -45,20 +46,20 @@ public class ApplicantDashboard extends AppCompatActivity {
                         .setQuery(mJobPost, PostJobData.class)
                         .build();
 
-        postJobAdapter = new PostJobAdapter(options);
-        recyclerView.setAdapter(postJobAdapter);
+        applicantPostJobAdapter = new ApplicantPostJobAdapter(options);
+        recyclerView.setAdapter(applicantPostJobAdapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        postJobAdapter.startListening();
+        applicantPostJobAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        postJobAdapter.stopListening();
+        applicantPostJobAdapter.stopListening();
     }
 
     @Override

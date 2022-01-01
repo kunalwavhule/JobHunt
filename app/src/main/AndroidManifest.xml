@@ -28,14 +28,17 @@
             android:exported="false"
             android:parentActivityName="Admin.AdminDashBoard" />
         <activity
+            android:name=".Applicant.ApplicantDashboard"
+            android:exported="false" />
+        <activity
             android:name=".Admin.AdminDashBoard"
             android:exported="false" />
         <activity
-            android:name=".InsertJobPostActivity"
+            android:name=".Recruiter.InsertJobPostActivity"
             android:exported="false"
-            android:parentActivityName=".RecruiterDashboard" />
+            android:parentActivityName=".Recruiter.RecruiterDashboard" />
         <activity
-            android:name=".RecruiterDashboard"
+            android:name=".Recruiter.RecruiterDashboard"
             android:exported="false" />
         <activity
             android:name=".Register"

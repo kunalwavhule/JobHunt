@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Recruiter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,11 +12,12 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -61,7 +62,7 @@ public class RecruiterDashboard extends AppCompatActivity {
         fabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),InsertJobPostActivity.class));
+                startActivity(new Intent(getApplicationContext(), InsertJobPostActivity.class));
 
             }
         });
@@ -93,7 +94,7 @@ public class RecruiterDashboard extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 return false;
             }
         });

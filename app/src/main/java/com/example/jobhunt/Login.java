@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.jobhunt.Admin.AdminDashBoard;
 import com.example.jobhunt.Applicant.ApplicantDashboard;
+import com.example.jobhunt.Recruiter.RecruiterDashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -70,7 +71,7 @@ public class Login extends AppCompatActivity {
                             finish();
                         }
                         if (userTypes == 1){
-                            Intent in = new Intent(Login.this,RecruiterDashboard.class);
+                            Intent in = new Intent(Login.this, RecruiterDashboard.class);
                             startActivity(in);
                             finish();
                         }

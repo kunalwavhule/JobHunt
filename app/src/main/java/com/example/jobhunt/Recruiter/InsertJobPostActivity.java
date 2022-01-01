@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Recruiter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.Data;
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.R;
+import com.example.jobhunt.Recruiter.RecruiterDashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -82,7 +85,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
                 mJobPost.child(id).setValue(postJobData);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getApplicationContext(),RecruiterDashboard.class));
+                startActivity(new Intent(getApplicationContext(), RecruiterDashboard.class));
                 finish();
 
 
@@ -99,7 +102,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return false;
             }
