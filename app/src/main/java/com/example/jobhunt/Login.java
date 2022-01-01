@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.jobhunt.Admin.AdminDashBoard;
+import com.example.jobhunt.Applicant.ApplicantDashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -63,7 +65,7 @@ public class Login extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int userTypes = snapshot.getValue(Integer.class);
                         if (userTypes == 0){
-                            Intent in = new Intent(Login.this,MainActivity.class);
+                            Intent in = new Intent(Login.this, ApplicantDashboard.class);
                             startActivity(in);
                             finish();
                         }
@@ -73,7 +75,7 @@ public class Login extends AppCompatActivity {
                             finish();
                         }
                         if (userTypes == 2){
-                            Intent in = new Intent(Login.this,AdminDashBoard.class);
+                            Intent in = new Intent(Login.this, AdminDashBoard.class);
                             startActivity(in);
                             finish();
                         }

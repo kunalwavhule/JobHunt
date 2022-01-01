@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +11,9 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 
 import com.example.jobhunt.Adapter.UserAdapter;
+import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.Data;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -73,7 +75,7 @@ public class AdminRecruiter extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return false;
             }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jobhunt">
+    package="com.example.jobhunt" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,25 +10,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JobHunt">
+        android:theme="@style/Theme.JobHunt" >
         <activity
             android:name=".ForgetPassword"
-            android:parentActivityName=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".AdminJobPost"
             android:exported="false"
-            android:parentActivityName=".AdminDashBoard" />
+            android:parentActivityName=".Login" />
         <activity
-            android:name=".AdminRecruiter"
+            android:name=".Admin.AdminJobPost"
             android:exported="false"
-            android:parentActivityName=".AdminDashBoard" />
+            android:parentActivityName=".Admin.AdminDashBoard" />
         <activity
-            android:name=".AdminApplicant"
+            android:name=".Admin.AdminRecruiter"
             android:exported="false"
-            android:parentActivityName=".AdminDashBoard" />
+            android:parentActivityName="Admin.AdminDashBoard" />
         <activity
-            android:name=".AdminDashBoard"
+            android:name=".Admin.AdminApplicant"
+            android:exported="false"
+            android:parentActivityName="Admin.AdminDashBoard" />
+        <activity
+            android:name=".Admin.AdminDashBoard"
             android:exported="false" />
         <activity
             android:name=".InsertJobPostActivity"
@@ -47,16 +47,13 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

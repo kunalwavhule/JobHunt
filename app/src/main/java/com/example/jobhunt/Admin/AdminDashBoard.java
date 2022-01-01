@@ -1,4 +1,5 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Admin;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.jobhunt.Admin.AdminApplicant;
+import com.example.jobhunt.Admin.AdminJobPost;
+import com.example.jobhunt.Admin.AdminRecruiter;
+import com.example.jobhunt.Login;
+import com.example.jobhunt.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDashBoard extends AppCompatActivity {
@@ -21,16 +27,16 @@ public class AdminDashBoard extends AppCompatActivity {
 
 
     public void AdminApplicant(View view) {
-        startActivity(new Intent(getApplicationContext(),AdminApplicant.class));
+        startActivity(new Intent(getApplicationContext(), AdminApplicant.class));
     }
 
     public void AdminRecruiter(View view) {
-        startActivity(new Intent(getApplicationContext(),AdminRecruiter.class));
+        startActivity(new Intent(getApplicationContext(), AdminRecruiter.class));
 
     }
 
     public void AdminJobPost(View view) {
-        startActivity(new Intent(getApplicationContext(),AdminJobPost.class));
+        startActivity(new Intent(getApplicationContext(), AdminJobPost.class));
 
     }
 
@@ -42,7 +48,7 @@ public class AdminDashBoard extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return false;
             }

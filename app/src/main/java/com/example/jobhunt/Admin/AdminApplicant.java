@@ -1,26 +1,30 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
-import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Adapter.UserAdapter;
+import com.example.jobhunt.Login;
+import com.example.jobhunt.Model.Data;
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AdminJobPost extends AppCompatActivity {
+public class AdminApplicant extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    PostJobAdapter postJobAdapter;
+    UserAdapter userAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
 
@@ -28,25 +32,25 @@ public class AdminJobPost extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_job_post);
+        setContentView(R.layout.activity_admin_applicant);
 
-        recyclerView = findViewById(R.id.rvajp);
+        recyclerView = findViewById(R.id.rvaa);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         auth = FirebaseAuth.getInstance();
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("User");
 
-        FirebaseRecyclerOptions<PostJobData> options =
-                new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJobPost, PostJobData.class)
+        FirebaseRecyclerOptions<Data> options =
+                new FirebaseRecyclerOptions.Builder<Data>()
+                        .setQuery(mJobPost.orderByChild("userTypes").equalTo(0), Data.class)
                         .build();
 
-        postJobAdapter = new PostJobAdapter(options);
-        recyclerView.setAdapter(postJobAdapter);
 
-
+        userAdapter = new UserAdapter(options);
+        recyclerView.setAdapter(userAdapter);
 
 
     }
@@ -54,20 +58,33 @@ public class AdminJobPost extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        postJobAdapter.startListening();
+        userAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        postJobAdapter.stopListening();
+        userAdapter.stopListening();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.logout,menu);
+        MenuItem logoutitem = menu.findItem(R.id.lagout);
+        logoutitem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return false;
+            }
+        });
         MenuItem item = menu.findItem(R.id.search);
+
         SearchView searchView = (SearchView) item.getActionView();
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -83,19 +100,18 @@ public class AdminJobPost extends AppCompatActivity {
             }
         });
         return super.onCreateOptionsMenu(menu);
-
     }
 
     private void txtSearch(String str){
 
-        FirebaseRecyclerOptions<PostJobData> options =
-                new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJobPost.orderByChild("title").startAt(str).endAt(str+"~"), PostJobData.class)
+        FirebaseRecyclerOptions<Data> options =
+                new FirebaseRecyclerOptions.Builder<Data>()
+                        .setQuery(mJobPost.orderByChild("fullname").startAt(str).endAt(str+"~"), Data.class)
                         .build();
-        postJobAdapter = new PostJobAdapter(options);
-        postJobAdapter.startListening();
-        recyclerView.setAdapter(postJobAdapter);
 
+
+        userAdapter = new UserAdapter(options);
+        userAdapter.startListening();
+        recyclerView.setAdapter(userAdapter);
     }
-
 }

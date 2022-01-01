@@ -1,4 +1,4 @@
-package com.example.jobhunt;
+package com.example.jobhunt.Applicant;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,23 +10,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class ApplicantDashboard extends AppCompatActivity {
+
     FirebaseAuth auth;
     RecyclerView recyclerView;
     PostJobAdapter postJobAdapter;
     private DatabaseReference mJobPost;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_applicant_dashboard);
 
         recyclerView = findViewById(R.id.Aprecview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,9 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         postJobAdapter = new PostJobAdapter(options);
         recyclerView.setAdapter(postJobAdapter);
-
-
-
     }
 
     @Override
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return false;
             }
@@ -78,4 +77,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
 }
