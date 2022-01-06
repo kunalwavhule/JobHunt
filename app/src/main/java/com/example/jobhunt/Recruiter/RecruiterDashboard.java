@@ -82,50 +82,21 @@ public class RecruiterDashboard extends AppCompatActivity {
         postJobAdapter.stopListening();
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search,menu);
         getMenuInflater().inflate(R.menu.logout,menu);
-        MenuItem logout = menu.findItem(R.id.lagout);
-        MenuItem item = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) item.getActionView();
-
-        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        MenuItem logoutitem = menu.findItem(R.id.lagout);
+        logoutitem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 auth.signOut();
                 startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
                 return false;
             }
         });
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                txtSearch(s);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                txtSearch(s);
-                return false;
-            }
-        });
         return super.onCreateOptionsMenu(menu);
-
     }
-
-    private void txtSearch(String str){
-
-        FirebaseRecyclerOptions<PostJobData> options =
-                new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJobPost.orderByChild("title").startAt(str).endAt(str+"~"), PostJobData.class)
-                        .build();
-        postJobAdapter = new PostJobAdapter(options);
-        postJobAdapter.startListening();
-        recyclerView.setAdapter(postJobAdapter);
-
-    }
-
 }

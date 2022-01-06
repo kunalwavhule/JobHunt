@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jobhunt" >
+    package="com.example.jobhunt">
 
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -10,7 +13,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JobHunt" >
+        android:theme="@style/Theme.JobHunt">
+        <activity
+            android:name=".Applicant.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant.AppliedJob"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant.SavedJob"
+            android:exported="false" />
         <activity
             android:name=".ForgetPassword"
             android:exported="false"
@@ -22,11 +34,11 @@
         <activity
             android:name=".Admin.AdminRecruiter"
             android:exported="false"
-            android:parentActivityName="Admin.AdminDashBoard" />
+            android:parentActivityName=".Admin.AdminDashBoard" />
         <activity
             android:name=".Admin.AdminApplicant"
             android:exported="false"
-            android:parentActivityName="Admin.AdminDashBoard" />
+            android:parentActivityName=".Admin.AdminDashBoard" />
         <activity
             android:name=".Applicant.ApplicantDashboard"
             android:exported="false" />
@@ -42,7 +54,7 @@
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:exported="false"
+            android:exported="true"
             android:parentActivityName=".Login" />
         <activity
             android:name=".Login"
@@ -50,7 +62,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

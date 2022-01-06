@@ -16,15 +16,20 @@
             android:layout_weight="1"
             android:layout_height="wrap_content">
 
-
             <TextView
+                android:id="@+id/datetxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/datetxt"
+                android:layout_marginLeft="10dp"
                 android:text="date"
-                android:textSize="25dp"
-                android:textStyle="italic"            android:textColor="@color/black"
-                android:layout_marginLeft="10dp"/>
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_below="@+id/applybtn"
+                android:layout_alignParentRight="true"
+                android:textStyle="italic" />
+
+
+
             <TextView
                 android:id="@+id/titletxt"
                 android:layout_width="match_parent"
@@ -32,7 +37,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="Titile of job"
                 android:textColor="@color/black"
-                android:layout_below="@+id/datetxt"
                 android:textSize="25dp"
                 android:textStyle="bold" />
 
@@ -69,32 +73,38 @@
 
             <Button
                 android:id="@+id/applybtn"
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/salarytxt"
-                android:text="apply"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="apply"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="italic" />
 
 
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_weight="5"
-            android:layout_height="wrap_content"
-            android:padding="15dp">
 
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
 
             <Button
                 android:id="@+id/savebtn"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/save" />
+
+
         </RelativeLayout>
+
+
     </LinearLayout>
 
 

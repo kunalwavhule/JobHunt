@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -67,6 +69,17 @@ public class AdminJobPost extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.logout, menu);
+        MenuItem logout = menu.findItem(R.id.lagout);
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return false;
+            }
+        });
         MenuItem item = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) item.getActionView();
 

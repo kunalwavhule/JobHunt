@@ -1,5 +1,6 @@
 package com.example.jobhunt.Admin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -66,9 +67,9 @@ public class AdminRecruiter extends AppCompatActivity {
         userAdapter.stopListening();
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search,menu);
         getMenuInflater().inflate(R.menu.logout,menu);
         MenuItem logoutitem = menu.findItem(R.id.lagout);
         logoutitem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -80,37 +81,7 @@ public class AdminRecruiter extends AppCompatActivity {
                 return false;
             }
         });
-        MenuItem item = menu.findItem(R.id.search);
 
-        SearchView searchView = (SearchView) item.getActionView();
-
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                txtSearch(s);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                txtSearch(s);
-                return false;
-            }
-        });
         return super.onCreateOptionsMenu(menu);
-    }
-
-    private void txtSearch(String str){
-
-        FirebaseRecyclerOptions<Data> options =
-                new FirebaseRecyclerOptions.Builder<Data>()
-                        .setQuery(mJobPost.orderByChild("fullname").startAt(str).endAt(str+"~"), Data.class)
-                        .build();
-
-        userAdapter = new UserAdapter(options);
-        userAdapter.startListening();
-        recyclerView.setAdapter(userAdapter);
-
     }
 }

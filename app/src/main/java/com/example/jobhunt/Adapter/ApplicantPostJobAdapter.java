@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,13 @@ import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData,ApplicantPostJobAdapter.myViewHolder> {
 
@@ -34,7 +42,30 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
         holder.description.setText(model.getDescription());
         holder.skill.setText(model.getSkill());
         holder.salary.setText(model.getSalary());
-        holder.date.setText(model.getDate());
+        holder.date.setText("posted job :\t"+model.getDate());
+        holder.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String,Object> map = new HashMap<>();
+
+                map.put(FirebaseAuth.getInstance().getUid(),"1");
+
+                FirebaseDatabase.getInstance().getReference().child("Job Post").child("Save").updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                      }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(holder.title.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
+
+            }
+        });
 
     }
 

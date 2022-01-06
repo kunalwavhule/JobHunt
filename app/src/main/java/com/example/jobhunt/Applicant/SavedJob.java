@@ -9,10 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Switch;
 
 import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
-import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
@@ -22,45 +20,47 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ApplicantDashboard extends AppCompatActivity {
+public class SavedJob extends AppCompatActivity {
 
     FirebaseAuth auth;
     RecyclerView recyclerView;
     ApplicantPostJobAdapter applicantPostJobAdapter;
-    private DatabaseReference mJob;
+    private DatabaseReference mJob,mRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_applicant_dashboard);
+        setContentView(R.layout.activity_saved_job);
 
-        recyclerView = findViewById(R.id.Aprecview);
+        recyclerView = findViewById(R.id.Aprvsavejob);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();
         mJob = FirebaseDatabase.getInstance().getReference().child("Job Post");
 
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJob, PostJobData.class)
+                        .setQuery(mJob.orderByChild(auth.getUid()).equalTo("1"), PostJobData.class)
                         .build();
         applicantPostJobAdapter = new ApplicantPostJobAdapter(options);
         recyclerView.setAdapter(applicantPostJobAdapter);
+
 
         //bottom navigation
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.save);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.save:
-                    startActivity(new Intent(getApplicationContext(),SavedJob.class));
-                    overridePendingTransition(0,0);
-                    return true;
                     case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),ApplicantDashboard.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.save:
                         return true;
                     case R.id.appled:
                         startActivity(new Intent(getApplicationContext(),AppliedJob.class));
@@ -104,5 +104,4 @@ public class ApplicantDashboard extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
-
 }
