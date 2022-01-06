@@ -50,7 +50,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
 
                 map.put(FirebaseAuth.getInstance().getUid(),"1");
 
-                FirebaseDatabase.getInstance().getReference().child("Job Post").child("Save").updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
