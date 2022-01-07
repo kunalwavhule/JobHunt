@@ -22,51 +22,37 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AdminApplicant extends AppCompatActivity {
-
     RecyclerView recyclerView;
     UserAdapter userAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_applicant);
-
         recyclerView = findViewById(R.id.rvaa);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         auth = FirebaseAuth.getInstance();
         FirebaseUser mUser = auth.getCurrentUser();
         String uid = mUser.getUid();
-
         mJobPost = FirebaseDatabase.getInstance().getReference().child("User");
-
         FirebaseRecyclerOptions<Data> options =
                 new FirebaseRecyclerOptions.Builder<Data>()
                         .setQuery(mJobPost.orderByChild("userTypes").equalTo(0), Data.class)
                         .build();
-
-
         userAdapter = new UserAdapter(options);
         recyclerView.setAdapter(userAdapter);
-
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         userAdapter.startListening();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
         userAdapter.stopListening();
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.logout,menu);
@@ -80,8 +66,6 @@ public class AdminApplicant extends AppCompatActivity {
                 return false;
             }
         });
-
         return super.onCreateOptionsMenu(menu);
     }
-
 }

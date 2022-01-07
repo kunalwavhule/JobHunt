@@ -29,9 +29,6 @@ public class RecruiterDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,32 +39,20 @@ public class RecruiterDashboard extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-
-
-
         mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
-
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
                         .setQuery(mJobPost.orderByChild("id").equalTo(auth.getUid()), PostJobData.class)
                         .build();
-
         postJobAdapter = new PostJobAdapter(options);
         recyclerView.setAdapter(postJobAdapter);
-
-
         // recyclerview
-
-
         fabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), InsertJobPostActivity.class));
-
             }
         });
-
-
     }
 
     @Override
@@ -81,8 +66,6 @@ public class RecruiterDashboard extends AppCompatActivity {
         super.onStop();
         postJobAdapter.stopListening();
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.logout,menu);
@@ -96,7 +79,6 @@ public class RecruiterDashboard extends AppCompatActivity {
                 return false;
             }
         });
-
         return super.onCreateOptionsMenu(menu);
     }
 }

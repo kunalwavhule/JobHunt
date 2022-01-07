@@ -7,17 +7,27 @@ public class PostJobData {
     String salary;
     String id;
     String date;
+    String pushid;
 
-    public PostJobData() {
-    }
-
-    public PostJobData(String title, String description, String skill, String salary, String id, String date) {
+    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid) {
         this.title = title;
         this.description = description;
         this.skill = skill;
         this.salary = salary;
         this.id = id;
         this.date = date;
+        this.pushid = pushid;
+    }
+
+    public String getPushid() {
+        return pushid;
+    }
+
+    public void setPushid(String pushid) {
+        this.pushid = pushid;
+    }
+
+    public PostJobData() {
     }
 
     public String getTitle() {

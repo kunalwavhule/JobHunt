@@ -19,7 +19,6 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myViewHolder> {
-
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -29,16 +28,13 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myVie
     public UserAdapter(@NonNull FirebaseRecyclerOptions<Data> options) {
         super(options);
     }
-
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Data model) {
-
         holder.id.setText(model.getId());
         holder.fullname.setText(model.getFullname());
         holder.email.setText(model.getEmail());
         holder.phoneno.setText(model.getPhoneno());
         holder.date.setText(model.getDate());
-
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,24 +57,16 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myVie
                 builder.show();
             }
         });
-
     }
-
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_item,parent,false);
         return new UserAdapter.myViewHolder(view);
-
-
     }
-
     public class myViewHolder extends RecyclerView.ViewHolder{
-
         TextView id, fullname, email,phoneno ,date;
         Button delete;
-
-
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.idap);
@@ -86,9 +74,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myVie
             email = itemView.findViewById(R.id.emailap);
             phoneno = itemView.findViewById(R.id.phonenoap);
             date = itemView.findViewById(R.id.dateap);
-
             delete = itemView.findViewById(R.id.deletebtn);
-
         }
     }
 }

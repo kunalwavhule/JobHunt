@@ -21,7 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+
                 android:text="push id" />
+
 
             <TextView
                 android:id="@+id/datetxt"
@@ -31,9 +33,22 @@
                 android:text="date"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                android:layout_below="@+id/applybtn"
+                android:layout_below="@+id/statustxt"
                 android:layout_alignParentRight="true"
                 android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/statustxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Appication Status"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_below="@+id/unapplybtn"
+                android:layout_alignParentLeft="true"
+                android:textStyle="italic" />
+
 
 
 
@@ -80,37 +95,18 @@
                 android:textStyle="italic" />
 
             <Button
-                android:id="@+id/applybtn"
+                android:id="@+id/unapplybtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/salarytxt"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
-                android:text="apply"
+                android:text="Cancel Application"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="10dp"
                 android:textStyle="italic" />
+       </RelativeLayout>
 
-
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5">
-
-            <Button
-                android:id="@+id/savebtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/save" />
-
-
-        </RelativeLayout>
 
 
     </LinearLayout>

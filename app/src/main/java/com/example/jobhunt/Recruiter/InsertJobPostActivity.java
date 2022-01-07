@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
@@ -81,7 +82,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
                 String id = mJobPost.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date);
+                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id);
 
                 mJobPost.child(id).setValue(postJobData);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();

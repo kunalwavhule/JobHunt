@@ -4,13 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Switch;
-
 import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
 import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Login;
@@ -23,35 +21,27 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ApplicantDashboard extends AppCompatActivity {
-
     FirebaseAuth auth;
     RecyclerView recyclerView;
     ApplicantPostJobAdapter applicantPostJobAdapter;
     private DatabaseReference mJob;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_dashboard);
-
         recyclerView = findViewById(R.id.Aprecview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();
         mJob = FirebaseDatabase.getInstance().getReference().child("Job Post");
-
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
                         .setQuery(mJob, PostJobData.class)
                         .build();
         applicantPostJobAdapter = new ApplicantPostJobAdapter(options);
         recyclerView.setAdapter(applicantPostJobAdapter);
-
         //bottom navigation
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-
         bottomNavigationView.setSelectedItemId(R.id.home);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -75,19 +65,16 @@ public class ApplicantDashboard extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         applicantPostJobAdapter.startListening();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
         applicantPostJobAdapter.stopListening();
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.logout,menu);
@@ -101,8 +88,6 @@ public class ApplicantDashboard extends AppCompatActivity {
                 return false;
             }
         });
-
         return super.onCreateOptionsMenu(menu);
     }
-
 }

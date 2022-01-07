@@ -36,8 +36,6 @@ public class Profile extends AppCompatActivity {
     ImageButton imageButton;
     TextView jobprofile,company,jobDescription,expDuration,name,phoneno,proemail,eduDec;
     DatabaseReference mDatabase;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +49,7 @@ public class Profile extends AppCompatActivity {
         phoneno = findViewById(R.id.prophoneno);
         proemail = findViewById(R.id.proemail);
         eduDec = findViewById(R.id.education);
-
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -65,32 +60,22 @@ public class Profile extends AppCompatActivity {
                 String job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("JobDescription").getValue(String.class);
                 String expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Experience").getValue(String.class);
                 String edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("EducationDec").getValue(String.class);
-
-
-
                 jobprofile.setText("Profile: \t"+JobProfile);
                 name.setText(proname);
                 phoneno.setText("phone number: \t"+phone_no);
                 company.setText("Company Name: \t"+Company);
                 jobDescription.setText("Job Decription: \n\t\t\t"+job_Decription);
                 expDuration.setText("Experience: \t"+expduration+" year");
-
                 eduDec.setText("Education: \t"+edu_dec);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         };
 mDatabase.addValueEventListener(postListener);
-
         //bottom navigation
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-
         bottomNavigationView.setSelectedItemId(R.id.profile);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -116,14 +101,11 @@ mDatabase.addValueEventListener(postListener);
     }
 
     public void Profile(View view) {
-
         final DialogPlus dialogPlus = DialogPlus.newDialog(imageButton.getContext())
                 .setContentHolder(new ViewHolder(R.layout.profile_experience_item))
-                .setExpanded(true,1500)
+                .setExpanded(true,800)
                 .create();
-
         View view1 = dialogPlus.getHolderView();
-
         EditText name = view1.findViewById(R.id.profilename);
         EditText phoneno = view1.findViewById(R.id.profile_no);
         EditText jobprofile = view1.findViewById(R.id.editTextTextPersonName2);
@@ -132,7 +114,6 @@ mDatabase.addValueEventListener(postListener);
         EditText w2w = view1.findViewById(R.id.editTextTextPersonName);
         EditText edudec = view1.findViewById(R.id.educationdec);
         Button btnUpdate = view1.findViewById(R.id.button);
-
         name.setText(name.getText().toString());
         phoneno.setText(phoneno.getText().toString());
         jobprofile.setText(jobprofile.getText().toString());
@@ -140,24 +121,17 @@ mDatabase.addValueEventListener(postListener);
         jobDescription.setText(jobDescription.getText().toString());
         w2w.setText(w2w.getText());
         edudec.setText(edudec.getText().toString());
-
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String proname = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullname").getValue(String.class);
                 String phone_no = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("phoneno").getValue(String.class);
-
                 String JobProfile = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Profile").getValue(String.class);
                 String Company = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("CompanyName").getValue(String.class);
                 String job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("JobDescription").getValue(String.class);
                 String expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Experience").getValue(String.class);
-
                 String edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("EducationDec").getValue(String.class);
-
-
                 name.setText(proname);
                 phoneno.setText(phone_no);
                 jobprofile.setText(JobProfile);
@@ -165,23 +139,13 @@ mDatabase.addValueEventListener(postListener);
                 jobDescription.setText(job_Decription);
                 w2w.setText(expduration);
                 edudec.setText(edu_dec);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         };
         mDatabase.addValueEventListener(postListener);
-
-
-
-
-
-
         dialogPlus.show();
-
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -193,7 +157,6 @@ mDatabase.addValueEventListener(postListener);
                 map.put("JobDescription",jobDescription.getText().toString());
                 map.put("Experience",w2w.getText().toString());
                 map.put("EducationDec",edudec.getText().toString());
-
                 FirebaseDatabase.getInstance().getReference().child("User").child(FirebaseAuth.getInstance().getUid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -209,6 +172,4 @@ mDatabase.addValueEventListener(postListener);
             }
         });
     }
-
-
 }
