@@ -13,4 +13,9 @@
     <color name="colorPrimaryDark">#6539ba</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bgBottomNavigation">#fe485a</color>
+
+    <color name="green">#00ff7f</color>
+    <color name="skyblue">#2acaea</color>
+    <color name="orange">#ff7f50</color>
+    <color name="lightgray">#696969</color>
 </resources>
