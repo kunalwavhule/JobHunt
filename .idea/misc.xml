@@ -12,6 +12,8 @@
         <entry key="..\:/JobHunt/app/src/main/res/drawable/arrow_back.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/button_background.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/edit_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_email.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_phonenumber.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_save_job.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_test.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/save.xml" value="0.19583333333333333" />
@@ -28,7 +30,7 @@
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.1" />
-        <entry key="..\:/JobHunt/app/src/main/res/layout/activity_register.xml" value="0.24180327868852458" />
+        <entry key="..\:/JobHunt/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_saved_job.xml" value="0.1796875" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_user_types.xml" value="0.1796875" />
