@@ -10,8 +10,13 @@
         <entry key="..\:/JobHunt/app/src/main/res/drawable/about.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/add.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/arrow_back.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/button_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/edit_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_save_job.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/ic_test.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/save.xml" value="0.19583333333333333" />
         <entry key="..\:/JobHunt/app/src/main/res/drawable/search.xml" value="0.19583333333333333" />
+        <entry key="..\:/JobHunt/app/src/main/res/drawable/user.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_admin_applicant.xml" value="0.1796875" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_admin_job_post.xml" value="0.165625" />
@@ -19,7 +24,7 @@
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_applied_job.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_insert_job_post.xml" value="0.25" />
-        <entry key="..\:/JobHunt/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/JobHunt/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.1" />
@@ -29,7 +34,8 @@
         <entry key="..\:/JobHunt/app/src/main/res/layout/activity_user_types.xml" value="0.1796875" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/applicant_applied_job_item.xml" value="0.22" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/applicant_item.xml" value="0.25" />
-        <entry key="..\:/JobHunt/app/src/main/res/layout/applicant_post_job_item.xml" value="0.22" />
+        <entry key="..\:/JobHunt/app/src/main/res/layout/applicant_post_job_item.xml" value="0.1" />
+        <entry key="..\:/JobHunt/app/src/main/res/layout/applicant_save_job_item.xml" value="0.14945652173913043" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/post_job_item.xml" value="0.16666666666666666" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/profile_contact_item.xml" value="0.1480978260869565" />
         <entry key="..\:/JobHunt/app/src/main/res/layout/profile_education_item.xml" value="0.1526268115942029" />

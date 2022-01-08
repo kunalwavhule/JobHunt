@@ -52,11 +52,10 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
                 map.put("description",model.getDescription());
                 map.put("skill",model.getSkill());
                 map.put("salary",model.getSalary());
-                map.put("id",model.getId());
 
 
 
-                FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).child("Saved").child(FirebaseAuth.getInstance().getUid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(holder.title.getContext(),getRef(position).getKey(),Toast.LENGTH_LONG).show();
@@ -93,7 +92,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_post_job_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_save_job_item,parent,false);
         return new ApplicantPostJobAdapter.myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
