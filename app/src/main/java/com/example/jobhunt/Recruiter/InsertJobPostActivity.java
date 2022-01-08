@@ -29,7 +29,7 @@ import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
     Toolbar toolbar;
-    EditText job_title,job_description,job_skill,job_salary;
+    EditText job_title,job_description,job_skill,job_salary,job_company,job_city;
     Button btn_post_job;
     //firebase
     FirebaseAuth auth;
@@ -53,6 +53,8 @@ public class InsertJobPostActivity extends AppCompatActivity {
         job_description = findViewById(R.id.job_description);
         job_skill = findViewById(R.id.job_skill);
         job_salary = findViewById(R.id.job_salary);
+        job_company = findViewById(R.id.job_company);
+        job_city = findViewById(R.id.job_city);
 
         btn_post_job = findViewById(R.id.btn_job_post);
         btn_post_job.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +64,8 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 String description = job_description.getText().toString().trim();
                 String skill = job_skill.getText().toString().trim();
                 String salary = job_salary.getText().toString().trim();
+                String company = job_company.getText().toString().trim();
+                String city = job_city.getText().toString().trim();
 
                 if (TextUtils.isEmpty(title)){
                     job_title.setError("Required Feild....");
@@ -79,10 +83,19 @@ public class InsertJobPostActivity extends AppCompatActivity {
                     job_salary.setError("Required Feild....");
                     return;
                 }
+                if (TextUtils.isEmpty(company)){
+                    job_company.setError("Required Feild....");
+                    return;
+                }
+                if (TextUtils.isEmpty(city)){
+                    job_city.setError("Required Feild....");
+                    return;
+                }
+
 
                 String id = mJobPost.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id);
+                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city);
 
                 mJobPost.child(id).setValue(postJobData);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
