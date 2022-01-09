@@ -95,7 +95,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
                 String id = mJobPost.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city);
+                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city,"Processing");
 
                 mJobPost.child(id).setValue(postJobData);
                 FirebaseDatabase.getInstance().getReference().child(auth.getUid()).child(id).setValue(id);

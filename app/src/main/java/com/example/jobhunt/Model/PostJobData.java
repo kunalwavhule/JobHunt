@@ -9,6 +9,7 @@ public class PostJobData {
     String date;
     String pushid;
     String company;
+    String status;
     String city;
 
     public PostJobData() {
@@ -16,8 +17,7 @@ public class PostJobData {
 
     }
 
-
-    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String city) {
+    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String status, String city) {
         this.title = title;
         this.description = description;
         this.skill = skill;
@@ -27,6 +27,15 @@ public class PostJobData {
         this.pushid = pushid;
         this.company = company;
         this.city = city;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getCompany() {

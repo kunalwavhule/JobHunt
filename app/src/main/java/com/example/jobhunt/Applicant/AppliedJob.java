@@ -33,10 +33,10 @@ public class AppliedJob extends AppCompatActivity {
         recyclerView = findViewById(R.id.aprvapplied);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();
-        mJob = FirebaseDatabase.getInstance().getReference().child("Job Post");
+        mJob = FirebaseDatabase.getInstance().getReference().child("Applied Status").child(auth.getUid());
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJob.orderByChild(auth.getUid()).equalTo("2"), PostJobData.class)
+                        .setQuery(mJob, PostJobData.class)
                         .build();
         applicantAppliedJobAdapter = new ApplicantAppliedJobAdapter(options);
         recyclerView.setAdapter(applicantAppliedJobAdapter);

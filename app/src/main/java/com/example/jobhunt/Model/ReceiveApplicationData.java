@@ -14,11 +14,13 @@ public class ReceiveApplicationData {
     String company;
     String city;
     String edu_des;
+    String uid;
+    String pushid;
 
     public ReceiveApplicationData() {
     }
 
-    public ReceiveApplicationData(String fullname, String email, String password, String phoneno, String date, String title, String description, String skill, String salary, String company, String city, String edu_des) {
+    public ReceiveApplicationData(String fullname, String email, String password, String phoneno, String date, String title, String description, String skill, String salary, String company, String city, String edu_des, String uid, String pushid) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
@@ -31,6 +33,24 @@ public class ReceiveApplicationData {
         this.company = company;
         this.city = city;
         this.edu_des = edu_des;
+        this.uid = uid;
+        this.pushid = pushid;
+    }
+
+    public String getPushid() {
+        return pushid;
+    }
+
+    public void setPushid(String pushid) {
+        this.pushid = pushid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getEdu_des() {

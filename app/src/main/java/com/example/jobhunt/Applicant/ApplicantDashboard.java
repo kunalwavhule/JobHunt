@@ -44,7 +44,7 @@ public class ApplicantDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView recyclerView;
     private DatabaseReference mJob,mDatabase;
-    String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec;
+    String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec,id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +112,7 @@ public class ApplicantDashboard extends AppCompatActivity {
                         rap.put("JobDescription",job_Decription);
                         rap.put("Experience",expduration);
                         rap.put("EducationDec",edu_dec);
+                        rap.put("uid",auth.getUid());
 
 
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -137,7 +138,16 @@ public class ApplicantDashboard extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Map<String,Object> map = new HashMap<>();
-                        map.put(auth.getUid(),"2");
+                        map.put("skill",model.getSkill());
+                        map.put("city",model.getCity());
+                        map.put("company",model.getCompany());
+                        map.put("date",model.getDate());
+                        map.put("salary",model.getSalary());
+                        map.put("skill",model.getSkill());
+                        map.put("title",model.getTitle());
+                        map.put("description",model.getDescription());
+                        map.put("status","processing");
+                        map.put("id",auth.getUid());
                         Map<String,Object> rap = new HashMap<>();
                         rap.put("skill",model.getSkill());
                         rap.put("city",model.getCity());
@@ -155,7 +165,9 @@ public class ApplicantDashboard extends AppCompatActivity {
                         rap.put("JobDescription",job_Decription);
                         rap.put("Experience",expduration);
                         rap.put("EducationDec",edu_dec);
-                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        rap.put("uid",auth.getUid());
+                        rap.put("pushid",getRef(position).getKey());
+                        FirebaseDatabase.getInstance().getReference().child("Applied Status").child(auth.getUid()).child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
