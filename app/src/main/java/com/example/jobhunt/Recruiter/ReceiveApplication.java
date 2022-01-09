@@ -8,63 +8,53 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.SearchView;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Adapter.ReceiveAppliationAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
+import com.example.jobhunt.Model.ReceiveApplicationData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RecruiterDashboard extends AppCompatActivity {
-    FloatingActionButton fabBtn;
-    // recycler view
+public class ReceiveApplication extends AppCompatActivity {
+
     RecyclerView recyclerView;
-    PostJobAdapter postJobAdapter;
+    ReceiveAppliationAdapter receiveAppliationAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recruiter_dashboard);
-        fabBtn = findViewById(R.id.fab_add);
-        recyclerView = findViewById(R.id.recycler_job_post_id);
+        setContentView(R.layout.activity_receive_application);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         auth = FirebaseAuth.getInstance();
 
-        mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post");
-        FirebaseRecyclerOptions<PostJobData> options =
-                new FirebaseRecyclerOptions.Builder<PostJobData>()
-                        .setQuery(mJobPost.orderByChild("id").equalTo(auth.getUid()), PostJobData.class)
+        mJobPost = FirebaseDatabase.getInstance().getReference().child("Applied").child(auth.getUid());
+        FirebaseRecyclerOptions<ReceiveApplicationData> options =
+                new FirebaseRecyclerOptions.Builder<ReceiveApplicationData>()
+                        .setQuery(mJobPost, ReceiveApplicationData.class)
                         .build();
-        postJobAdapter = new PostJobAdapter(options);
-        recyclerView.setAdapter(postJobAdapter);
-        // recyclerview
-        fabBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), InsertJobPostActivity.class));
-            }
-        });
+        receiveAppliationAdapter = new ReceiveAppliationAdapter(options);
+        recyclerView.setAdapter(receiveAppliationAdapter);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        postJobAdapter.startListening();
+        receiveAppliationAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        postJobAdapter.stopListening();
+        receiveAppliationAdapter.stopListening();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,9 +70,5 @@ public class RecruiterDashboard extends AppCompatActivity {
             }
         });
         return super.onCreateOptionsMenu(menu);
-    }
-
-    public void ReceiveApplication(View view) {
-        startActivity(new Intent(getApplicationContext(),ReceiveApplication.class));
     }
 }

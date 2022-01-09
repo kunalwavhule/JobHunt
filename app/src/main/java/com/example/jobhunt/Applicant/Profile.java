@@ -64,10 +64,10 @@ public class Profile extends AppCompatActivity {
                 name.setText(proname);
                 phoneno.setText("phone number: \t"+phone_no);
                 company.setText("Company Name: \t"+Company);
-                jobDescription.setText("Job Decription: \n\t\t\t"+job_Decription);
+                jobDescription.setText("Job Description : \n\t\t\t"+job_Decription);
                 expDuration.setText("Experience: \t"+expduration+" year");
                 eduDec.setText("Education: \t"+edu_dec);
-            }
+                }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

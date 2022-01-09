@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
@@ -28,17 +30,21 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class ApplicantDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView recyclerView;
-  //  ApplicantPostJobAdapter applicantPostJobAdapter;
-    private DatabaseReference mJob;
+    private DatabaseReference mJob,mDatabase;
+    String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +53,7 @@ public class ApplicantDashboard extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();
         mJob = FirebaseDatabase.getInstance().getReference().child("Job Post");
+
         FirebaseRecyclerOptions<PostJobData> options =
                 new FirebaseRecyclerOptions.Builder<PostJobData>()
                         .setQuery(mJob, PostJobData.class)
@@ -61,31 +68,67 @@ public class ApplicantDashboard extends AppCompatActivity {
                 holder.salary.setText(model.getSalary());
                 holder.date.setText("posted job :\t"+model.getDate());
                 holder.pushid.setText(getRef(position).getKey());
-             //   final String postkey=getRef(position).getKey();
 
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                ValueEventListener postListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        name = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullname").getValue(String.class);
+                        phone_no = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("phoneno").getValue(String.class);
+                        Company = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("CompanyName").getValue(String.class);
 
+                        JobProfile = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Profile").getValue(String.class);
+                        job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("JobDescription").getValue(String.class);
+                        expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Experience").getValue(String.class);
+                        edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("EducationDec").getValue(String.class);
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                };
+                mDatabase.addValueEventListener(postListener);
+
+                //Save Button
                 holder.btnSave.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Map<String,Object> map = new HashMap<>();
-                        map.put(FirebaseAuth.getInstance().getUid(),"1");
+                        map.put(auth.getUid(),"1");
+                        Map<String,Object> rap = new HashMap<>();
+                        rap.put("skill",model.getSkill());
+                        rap.put("city",model.getCity());
+                        rap.put("company",model.getCompany());
+                        rap.put("date",model.getDate());
+                        rap.put("salary",model.getSalary());
+                        rap.put("skill",model.getSkill());
+                        rap.put("title",model.getTitle());
+                        rap.put("description",model.getDescription());
 
-
+                        rap.put("fullname",name);
+                        rap.put("phoneno",phone_no);
+                        rap.put("JobProfile",JobProfile);
+                        rap.put("CompanyName", Company);
+                        rap.put("JobDescription",job_Decription);
+                        rap.put("Experience",expduration);
+                        rap.put("EducationDec",edu_dec);
 
 
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(holder.title.getContext(),getRef(position).getKey(),Toast.LENGTH_LONG).show();
-                                final String postkey=getRef(position).getKey();
-                              //  Intent intent=new Intent(getApplicationContext(),SavedJob.class);
-                              //  intent.putExtra("pushkey",postkey);
-                             //   startActivity(intent);
+                                Toast.makeText(holder.title.getContext(),"Job Saved Suceessfully"+model.getTitle(),Toast.LENGTH_LONG).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(holder.title.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        FirebaseDatabase.getInstance().getReference("Save").child(model.getId()).child(auth.getUid()).updateChildren(rap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(holder.title.getContext(),"Update data on Firebase Save",Toast.LENGTH_LONG).show();
                             }
                         });
                     }
@@ -94,7 +137,24 @@ public class ApplicantDashboard extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Map<String,Object> map = new HashMap<>();
-                        map.put(FirebaseAuth.getInstance().getUid(),"2");
+                        map.put(auth.getUid(),"2");
+                        Map<String,Object> rap = new HashMap<>();
+                        rap.put("skill",model.getSkill());
+                        rap.put("city",model.getCity());
+                        rap.put("company",model.getCompany());
+                        rap.put("date",model.getDate());
+                        rap.put("salary",model.getSalary());
+                        rap.put("skill",model.getSkill());
+                        rap.put("title",model.getTitle());
+                        rap.put("description",model.getDescription());
+
+                        rap.put("fullname",name);
+                        rap.put("phoneno",phone_no);
+                        rap.put("JobProfile",JobProfile);
+                        rap.put("CompanyName", Company);
+                        rap.put("JobDescription",job_Decription);
+                        rap.put("Experience",expduration);
+                        rap.put("EducationDec",edu_dec);
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
@@ -106,10 +166,15 @@ public class ApplicantDashboard extends AppCompatActivity {
                                 Toast.makeText(holder.title.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
                             }
                         });
+
+                        FirebaseDatabase.getInstance().getReference("Applied").child(model.getId()).child(auth.getUid()).updateChildren(rap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(holder.title.getContext(),"Update data on Firebase Save",Toast.LENGTH_LONG).show();
+                            }
+                        });
                     }
                 });
-
-
             }
 
             @NonNull
@@ -122,11 +187,6 @@ public class ApplicantDashboard extends AppCompatActivity {
         } ;
         firebaseRecyclerAdapter.startListening();
         recyclerView.setAdapter(firebaseRecyclerAdapter);
-
-
-    //    applicantPostJobAdapter = new ApplicantPostJobAdapter(options);
-        //   recyclerView.setAdapter(applicantPostJobAdapter);
-        //bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -152,16 +212,6 @@ public class ApplicantDashboard extends AppCompatActivity {
             }
         });
     }
-    //@Override
-    //protected void onStart() {
-     //   super.onStart();
-       // applicantPostJobAdapter.startListening();
-    //}
-    //@Override
-    //protected void onStop() {
-      //  super.onStop();
-       // applicantPostJobAdapter.stopListening();
-    //}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.logout,menu);

@@ -68,27 +68,27 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 String city = job_city.getText().toString().trim();
 
                 if (TextUtils.isEmpty(title)){
-                    job_title.setError("Required Feild....");
+                    job_title.setError("Required Field....");
                     return;
                 }
                 if (TextUtils.isEmpty(description)){
-                    job_description.setError("Required Feild....");
+                    job_description.setError("Required Field....");
                     return;
                 }
                 if (TextUtils.isEmpty(skill)){
-                    job_skill.setError("Required Feild....");
+                    job_skill.setError("Required Field....");
                     return;
                 }
                 if (TextUtils.isEmpty(salary)){
-                    job_salary.setError("Required Feild....");
+                    job_salary.setError("Required Field....");
                     return;
                 }
                 if (TextUtils.isEmpty(company)){
-                    job_company.setError("Required Feild....");
+                    job_company.setError("Required Field....");
                     return;
                 }
                 if (TextUtils.isEmpty(city)){
-                    job_city.setError("Required Feild....");
+                    job_city.setError("Required Field....");
                     return;
                 }
 
@@ -98,6 +98,7 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city);
 
                 mJobPost.child(id).setValue(postJobData);
+                FirebaseDatabase.getInstance().getReference().child(auth.getUid()).child(id).setValue(id);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(), RecruiterDashboard.class));
                 finish();
