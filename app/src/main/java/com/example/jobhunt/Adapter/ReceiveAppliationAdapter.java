@@ -67,6 +67,28 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
             }
         });
 
+        holder.Reject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Map<String,Object> map = new HashMap<>();
+                map.put("status","Application Rejected");
+
+                FirebaseDatabase.getInstance().getReference().child("Applied Status").child(model.getUid()).child(model.getPushid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(holder.applicantname.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(holder.applicantname.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+        });
+
     }
 
     @NonNull
