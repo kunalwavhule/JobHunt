@@ -30,6 +30,9 @@ public class AdminJobPost extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Post A Job");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_job_post);
 

@@ -47,6 +47,9 @@ public class ApplicantDashboard extends AppCompatActivity {
     String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec,id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Applicant Dashboard");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_dashboard);
         recyclerView = findViewById(R.id.Aprecview);

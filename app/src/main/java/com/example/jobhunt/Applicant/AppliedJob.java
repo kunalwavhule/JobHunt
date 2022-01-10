@@ -28,6 +28,9 @@ public class AppliedJob extends AppCompatActivity {
     private DatabaseReference mJob,mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Applied Jobs");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applied_job);
         recyclerView = findViewById(R.id.aprvapplied);

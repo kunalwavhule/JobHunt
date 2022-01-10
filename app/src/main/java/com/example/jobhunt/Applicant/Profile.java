@@ -38,6 +38,9 @@ public class Profile extends AppCompatActivity {
     DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("My Profile");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         imageButton = findViewById(R.id.imageButton4);

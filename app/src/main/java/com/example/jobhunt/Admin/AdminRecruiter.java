@@ -31,6 +31,9 @@ public class AdminRecruiter extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Recruiters");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_recruiter);
 

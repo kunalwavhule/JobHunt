@@ -37,6 +37,9 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Post Job");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_job_post);
         auth = FirebaseAuth.getInstance();

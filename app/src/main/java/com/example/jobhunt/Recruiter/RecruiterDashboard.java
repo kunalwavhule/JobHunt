@@ -31,6 +31,9 @@ public class RecruiterDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Recruiter Dashboard");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter_dashboard);
         fabBtn = findViewById(R.id.fab_add);

@@ -28,6 +28,9 @@ public class ReceiveApplication extends AppCompatActivity {
     private DatabaseReference mJobPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setTitle("Recieved Job Application");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_application);
         recyclerView = findViewById(R.id.recyclerView);
