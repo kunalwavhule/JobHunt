@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHunt">
         <activity
-            android:name=".MainActivity_newProfile"
-            android:exported="false" />
-        <activity
             android:name=".Recruiter.RecruiterProfile"
             android:exported="false" />
         <activity
