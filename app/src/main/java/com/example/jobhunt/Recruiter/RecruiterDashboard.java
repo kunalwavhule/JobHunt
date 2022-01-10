@@ -1,5 +1,6 @@
 package com.example.jobhunt.Recruiter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,10 +13,14 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
+import com.example.jobhunt.Applicant.AppliedJob;
+import com.example.jobhunt.Applicant.Profile;
+import com.example.jobhunt.Applicant.SavedJob;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -56,6 +61,32 @@ public class RecruiterDashboard extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), InsertJobPostActivity.class));
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.rbottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.receive:
+                        startActivity(new Intent(getApplicationContext(), ReceiveApplication.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        return true;
+                    case R.id.selected:
+                        startActivity(new Intent(getApplicationContext(), RecruiterSelected.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), RecruiterProfile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -85,7 +116,4 @@ public class RecruiterDashboard extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void ReceiveApplication(View view) {
-        startActivity(new Intent(getApplicationContext(),ReceiveApplication.class));
-    }
 }

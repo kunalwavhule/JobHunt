@@ -23,6 +23,9 @@ import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
+import com.example.jobhunt.Recruiter.ReceiveApplication;
+import com.example.jobhunt.Recruiter.RecruiterProfile;
+import com.example.jobhunt.Recruiter.RecruiterSelected;
 import com.example.jobhunt.myViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -208,18 +211,18 @@ public class ApplicantDashboard extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.save:
-                    startActivity(new Intent(getApplicationContext(),SavedJob.class));
+                    case R.id.receive:
+                    startActivity(new Intent(getApplicationContext(), ReceiveApplication.class));
                     overridePendingTransition(0,0);
                     return true;
                     case R.id.home:
                         return true;
-                    case R.id.appled:
-                        startActivity(new Intent(getApplicationContext(),AppliedJob.class));
+                    case R.id.selected:
+                        startActivity(new Intent(getApplicationContext(), RecruiterSelected.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),Profile.class));
+                        startActivity(new Intent(getApplicationContext(), RecruiterProfile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
