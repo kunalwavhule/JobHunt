@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jobhunt">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JobHunt">
+        <activity
+            android:name=".Recruiter.RecruiterProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Recruiter.RecruiterSelected"
+            android:exported="false" />
+        <activity
+            android:name=".Recruiter.ReceiveApplication"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant.AppliedJob"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant.SavedJob"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPassword"
+            android:exported="false"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".Admin.AdminJobPost"
+            android:exported="false"
+            android:parentActivityName=".Admin.AdminDashBoard" />
+        <activity
+            android:name=".Admin.AdminRecruiter"
+            android:exported="false"
+            android:parentActivityName=".Admin.AdminDashBoard" />
+        <activity
+            android:name=".Admin.AdminApplicant"
+            android:exported="false"
+            android:parentActivityName=".Admin.AdminDashBoard" />
+        <activity
+            android:name=".Applicant.ApplicantDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminDashBoard"
+            android:exported="false" />
+        <activity
+            android:name=".Recruiter.InsertJobPostActivity"
+            android:exported="false"
+            android:parentActivityName=".Recruiter.RecruiterDashboard" />
+        <activity
+            android:name=".Recruiter.RecruiterDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="true"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

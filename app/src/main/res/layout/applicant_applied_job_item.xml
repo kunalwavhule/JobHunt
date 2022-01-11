@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <TextView
+                android:id="@+id/titletxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Titile of job"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptiontxt"
+                android:text="Email id"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/titletxt"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/skilltxt"
+                android:text="Phone Number"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/descriptiontxt"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/salarytxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/skilltxt"
+                android:layout_marginLeft="10dp"
+                android:text="salary"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/unapplybtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/salarytxt"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Cancel Application"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                android:textStyle="italic" />
+       </RelativeLayout>
+
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_below="@+id/unapplybtn"
+                android:layout_alignParentLeft="true"
+                android:textStyle="italic|bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/datetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="date"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:gravity="right"
+            android:layout_below="@+id/statustxt"
+            android:layout_alignParentRight="true"
+            android:textStyle="italic" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

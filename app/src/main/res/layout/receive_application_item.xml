@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:id="@+id/receivecompanyname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Company Name"
+                android:textColor="#F4511E"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/job_city"
+                android:text="@string/City"
+                android:layout_toRightOf="@+id/job_title"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/receivecompanyname"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/job_title"
+                android:text="@string/title_profile"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/receivecompanyname"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptiontxt"
+                android:text="@string/Description"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/job_city"
+                android:layout_marginLeft="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightgray"
+                android:id="@+id/line"
+                android:layout_below="@+id/descriptiontxt"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicantname"
+                android:text="@string/Name"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/line"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicantphoneno"
+                android:text="@string/phonenumber"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/applicantname"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicantemail"
+                android:text="@string/Emailid"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:layout_below="@id/applicantphoneno"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicantedu_dec"
+                android:text="@string/EducationDec"
+                android:textStyle="italic"
+                android:textColor="#040404"
+                android:layout_below="@id/applicantemail"
+                android:layout_marginLeft="10dp"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:id="@+id/acceptjob"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reject"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:id="@+id/rejectjob"/>
+    </LinearLayout>
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>

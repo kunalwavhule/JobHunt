@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">JobHunt</string>
+
+
+    <string name="title_shop">Shop</string>
+    <string name="title_gifts">Gifts</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="Experience">Experience</string>
+    <string name="Job">JobName</string>
+    <string name="Company">Company Name</string>
+    <string name="Role">Role of Profile</string>
+    <string name="WhentoWhen">When to When</string>
+    <string name="Education">Eduation</string>
+    <string name="Update">Update</string>
+    <string name="Description">Description</string>
+    <string name="NoYearExp">No of Year Experience</string>
+    <string name="EducationDec">Educational details</string>
+    <string name="Emailid">Email id</string>
+    <string name="Name">Name</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="City">City</string>
+</resources>
