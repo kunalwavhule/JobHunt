@@ -16,7 +16,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
@@ -95,7 +94,7 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.receive_application_item,parent,false);
-        return new com.example.jobhunt.Adapter.ReceiveAppliationAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{

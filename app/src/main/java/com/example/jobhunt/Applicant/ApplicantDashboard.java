@@ -1,12 +1,5 @@
 package com.example.jobhunt.Applicant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,18 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
-import com.example.jobhunt.Adapter.PostJobAdapter;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
-import com.example.jobhunt.Recruiter.ReceiveApplication;
-import com.example.jobhunt.Recruiter.RecruiterProfile;
-import com.example.jobhunt.Recruiter.RecruiterSelected;
 import com.example.jobhunt.myViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -41,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class ApplicantDashboard extends AppCompatActivity {
     FirebaseAuth auth;
@@ -50,9 +40,6 @@ public class ApplicantDashboard extends AppCompatActivity {
     String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec,id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Applicant Dashboard");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_dashboard);
         recyclerView = findViewById(R.id.Aprecview);
@@ -211,18 +198,18 @@ public class ApplicantDashboard extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.receive:
-                    startActivity(new Intent(getApplicationContext(), ReceiveApplication.class));
+                    case R.id.save:
+                    startActivity(new Intent(getApplicationContext(),SavedJob.class));
                     overridePendingTransition(0,0);
                     return true;
                     case R.id.home:
                         return true;
-                    case R.id.selected:
-                        startActivity(new Intent(getApplicationContext(), RecruiterSelected.class));
+                    case R.id.appled:
+                        startActivity(new Intent(getApplicationContext(),AppliedJob.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), RecruiterProfile.class));
+                        startActivity(new Intent(getApplicationContext(),Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

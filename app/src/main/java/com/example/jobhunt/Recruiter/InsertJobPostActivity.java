@@ -14,17 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.jobhunt.Login;
-import com.example.jobhunt.Model.Data;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
-import com.example.jobhunt.Recruiter.RecruiterDashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
@@ -37,9 +34,6 @@ public class InsertJobPostActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Post Job");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_job_post);
         auth = FirebaseAuth.getInstance();

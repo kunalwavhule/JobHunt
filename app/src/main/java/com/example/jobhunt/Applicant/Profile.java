@@ -1,14 +1,7 @@
 package com.example.jobhunt.Applicant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.jobhunt.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -37,12 +33,8 @@ public class Profile extends AppCompatActivity {
     ImageButton imageButton;
     TextView jobprofile,company,jobDescription,expDuration,name,phoneno,proemail,eduDec;
     DatabaseReference mDatabase;
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("My Profile");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         imageButton = findViewById(R.id.imageButton4);

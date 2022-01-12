@@ -1,15 +1,13 @@
 package com.example.jobhunt.Admin;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SearchView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobhunt.Adapter.UserAdapter;
 import com.example.jobhunt.Login;
@@ -31,9 +29,6 @@ public class AdminRecruiter extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Recruiters");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_recruiter);
 

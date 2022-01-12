@@ -17,11 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -76,7 +72,7 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_applied_job_item,parent,false);
-        return new ApplicantAppliedJobAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{

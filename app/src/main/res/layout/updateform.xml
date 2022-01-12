@@ -1,113 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update details"
-        android:textColor="@color/colorPrimary"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:background="#e0e0e0" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:textSize="25dp"
+            
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content"
+            android:text="Update details" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/textView"
+            android:layout_height="match_parent">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Title"
-                app:startIconTint="@color/colorPrimary">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:text="Title " />
+
+                <EditText
                     android:id="@+id/titleupdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start" />
+                    android:layout_below="@+id/textView"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded"
+                    android:hint="Title"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Job Description"
-                app:startIconTint="@color/colorPrimary">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:text="Description " />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/desupdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:inputType="textMultiLine"
-                    android:lines="5" />
+                    android:layout_below="@+id/titleupdate"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded"
+                    android:hint="Description"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:text="Skill " />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Skill"
-                app:startIconTint="@color/colorPrimary">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/skillupdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start" />
+                    android:layout_below="@+id/desupdate"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded"
+                    android:hint="Skill"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Salary"
-                app:startIconTint="@color/colorPrimary">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:text="Salary" />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/salaryupdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start" />
+                    android:layout_below="@+id/skillupdate"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded"
+                    android:hint="Salary"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/updatebtn"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="Update"
-                android:textColor="#FFFFFF"
-                android:theme="@style/Button" />
+                <Button
+                    android:id="@+id/updatebtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/salaryupdate"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded"
+                    android:text="Update"
+                    android:textSize="25dp" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
 
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+</androidx.cardview.widget.CardView>

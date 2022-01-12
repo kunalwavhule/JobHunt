@@ -62,7 +62,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myVie
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_item,parent,false);
-        return new UserAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
         TextView id, fullname, email,phoneno ,date;

@@ -19,7 +19,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -27,7 +26,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder> {
+public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJobAdapter.myViewHolder> {
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -38,7 +37,7 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, com.exa
         super(options);
     }
     @Override
-    protected void onBindViewHolder(@NonNull com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder holder, int position, @NonNull PostJobData model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull PostJobData model) {
         holder.title.setText(model.getTitle());
         holder.description.setText(model.getDescription());
         holder.skill.setText(model.getSkill());
@@ -112,9 +111,9 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, com.exa
     }
     @NonNull
     @Override
-    public com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_job_item,parent,false);
-        return new com.example.jobhunt.Adapter.PostJobAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
         TextView title,description, skill,salary,date;

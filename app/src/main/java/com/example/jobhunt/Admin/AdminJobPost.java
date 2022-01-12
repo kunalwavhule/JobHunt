@@ -1,14 +1,14 @@
 package com.example.jobhunt.Admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobhunt.Adapter.PostJobAdapter;
 import com.example.jobhunt.Login;
@@ -30,9 +30,6 @@ public class AdminJobPost extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Post A Job");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_job_post);
 

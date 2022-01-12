@@ -1,19 +1,17 @@
 package com.example.jobhunt.Admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SearchView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobhunt.Adapter.UserAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.Data;
-import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,9 +26,6 @@ public class AdminApplicant extends AppCompatActivity {
     private DatabaseReference mJobPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Applicants");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_applicant);
         recyclerView = findViewById(R.id.rvaa);

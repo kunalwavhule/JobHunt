@@ -54,7 +54,7 @@
                     android:textSize="30sp" />
             </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView1"
@@ -95,7 +95,7 @@
                     android:id="@+id/proemail"
                     android:textSize="20sp"/>
 
-            </RelativeLayout>
+               </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
@@ -163,7 +163,10 @@
                     android:textSize="20sp" />
             </RelativeLayout>
 
+
         </androidx.cardview.widget.CardView>
+
+
 
         <androidx.cardview.widget.CardView
             app:cardBackgroundColor="#c0d6e4"
@@ -196,9 +199,15 @@
                     android:layout_below="@+id/textView"
                     android:textSize="20sp" />
 
+
             </RelativeLayout>
+
+
         </androidx.cardview.widget.CardView>
+
+
     </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

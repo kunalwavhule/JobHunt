@@ -1,17 +1,16 @@
 package com.example.jobhunt.Applicant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.jobhunt.Adapter.ApplicantAppliedJobAdapter;
-import com.example.jobhunt.Adapter.ApplicantPostJobAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
@@ -28,9 +27,6 @@ public class AppliedJob extends AppCompatActivity {
     private DatabaseReference mJob,mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getSupportActionBar().setTitle("Applied Jobs");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applied_job);
         recyclerView = findViewById(R.id.aprvapplied);

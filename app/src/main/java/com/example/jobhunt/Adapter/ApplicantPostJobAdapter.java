@@ -1,7 +1,5 @@
 package com.example.jobhunt.Adapter;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jobhunt.Applicant.SavedJob;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -93,7 +89,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.applicant_save_job_item,parent,false);
-        return new ApplicantPostJobAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
         TextView title,description, skill,salary,date,pushid;
