@@ -58,8 +58,12 @@
         <entry key="..\:/JobHunt/app/src/main/res/menu/search.xml" value="0.1" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_admin_applicant.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_insert_job_post.xml" value="0.1" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_receive_application.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.1" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_profile.xml" value="0.1796875" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_selected.xml" value="0.165625" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/menu/reqruiternavigation.xml" value="0.1796875" />
       </map>
     </option>
   </component>
