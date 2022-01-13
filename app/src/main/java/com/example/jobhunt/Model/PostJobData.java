@@ -9,15 +9,19 @@ public class PostJobData {
     String date;
     String pushid;
     String company;
+     String city;
     String status;
-    String city;
+    String qualification;
+    String jobtypes;
+    String schedule;
+    String experience;
 
     public PostJobData() {
 
 
     }
 
-    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String status, String city) {
+    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String city, String status, String qualification, String jobtypes, String schedule, String experience) {
         this.title = title;
         this.description = description;
         this.skill = skill;
@@ -28,40 +32,11 @@ public class PostJobData {
         this.company = company;
         this.city = city;
         this.status = status;
+        this.qualification = qualification;
+        this.jobtypes = jobtypes;
+        this.schedule = schedule;
+        this.experience = experience;
     }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getPushid() {
-        return pushid;
-    }
-
-    public void setPushid(String pushid) {
-        this.pushid = pushid;
-    }
-
 
     public String getTitle() {
         return title;
@@ -109,5 +84,69 @@ public class PostJobData {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getPushid() {
+        return pushid;
+    }
+
+    public void setPushid(String pushid) {
+        this.pushid = pushid;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    public String getJobtypes() {
+        return jobtypes;
+    }
+
+    public void setJobtypes(String jobtypes) {
+        this.jobtypes = jobtypes;
+    }
+
+    public String getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 }

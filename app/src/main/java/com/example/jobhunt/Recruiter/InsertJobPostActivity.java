@@ -26,7 +26,7 @@ import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
     Toolbar toolbar;
-    EditText job_title,job_description,job_skill,job_salary,job_company,job_city;
+    EditText job_title,job_description,job_skill,job_salary,job_company,job_city,job_qualification,job_jobtypes,job_schedule,job_experience;
     Button btn_post_job;
     //firebase
     FirebaseAuth auth;
@@ -52,6 +52,10 @@ public class InsertJobPostActivity extends AppCompatActivity {
         job_salary = findViewById(R.id.job_salary);
         job_company = findViewById(R.id.job_company);
         job_city = findViewById(R.id.job_city);
+        job_qualification = findViewById(R.id.job_qualification);
+        job_jobtypes = findViewById(R.id.job_jobtypes);
+        job_schedule = findViewById(R.id.job_schedule);
+        job_experience = findViewById(R.id.job_experience);
 
         btn_post_job = findViewById(R.id.btn_job_post);
         btn_post_job.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +67,12 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 String salary = job_salary.getText().toString().trim();
                 String company = job_company.getText().toString().trim();
                 String city = job_city.getText().toString().trim();
+
+                String qualification = job_qualification.getText().toString().trim();
+                String jobtypes = job_jobtypes.getText().toString().trim();
+                String schedule = job_schedule.getText().toString().trim();
+                String experience = job_experience.getText().toString().trim();
+
 
                 if (TextUtils.isEmpty(title)){
                     job_title.setError("Required Field....");
@@ -89,13 +99,31 @@ public class InsertJobPostActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (TextUtils.isEmpty(qualification)){
+                    job_qualification.setError("Required Field....");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(jobtypes)){
+                    job_jobtypes.setError("Required Field....");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(schedule)){
+                    job_schedule.setError("Required Field....");
+                    return;
+                }
+                if (TextUtils.isEmpty(experience)){
+                    job_experience.setError("Required Field....");
+                    return;
+                }
+
 
                 String id = mJobPost.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-                PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city,"Processing");
+               PostJobData postJobData = new PostJobData(title,description,skill,salary, auth.getUid(), date,id,company,city,"Processing",qualification,jobtypes,schedule,experience);
 
                 mJobPost.child(id).setValue(postJobData);
-                FirebaseDatabase.getInstance().getReference().child(auth.getUid()).child(id).setValue(id);
                 Toast.makeText(getApplicationContext(),"successfull",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(), RecruiterDashboard.class));
                 finish();
