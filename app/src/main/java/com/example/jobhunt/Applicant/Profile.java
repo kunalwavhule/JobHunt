@@ -19,6 +19,8 @@ import com.example.jobhunt.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -102,16 +104,16 @@ mDatabase.addValueEventListener(postListener);
     public void Profile(View view) {
         final DialogPlus dialogPlus = DialogPlus.newDialog(imageButton.getContext())
                 .setContentHolder(new ViewHolder(R.layout.profile_experience_item))
-                .setExpanded(true,800)
+                .setExpanded(true,1500)
                 .create();
         View view1 = dialogPlus.getHolderView();
-        EditText name = view1.findViewById(R.id.profilename);
-        EditText phoneno = view1.findViewById(R.id.profile_no);
-        EditText jobprofile = view1.findViewById(R.id.editTextTextPersonName2);
-        EditText companyname = view1.findViewById(R.id.editTextTextPersonName3);
-        EditText jobDescription = view1.findViewById(R.id.editTextTextPersonName4);
-        EditText w2w = view1.findViewById(R.id.editTextTextPersonName);
-        EditText edudec = view1.findViewById(R.id.educationdec);
+        TextInputEditText name = view1.findViewById(R.id.profilename);
+        TextInputEditText phoneno = view1.findViewById(R.id.profile_no);
+        TextInputEditText jobprofile = view1.findViewById(R.id.editTextTextPersonName2);
+        TextInputEditText companyname = view1.findViewById(R.id.editTextTextPersonName3);
+        TextInputEditText jobDescription = view1.findViewById(R.id.editTextTextPersonName4);
+        TextInputEditText w2w = view1.findViewById(R.id.editTextTextPersonName);
+        TextInputEditText edudec = view1.findViewById(R.id.educationdec);
         Button btnUpdate = view1.findViewById(R.id.button);
         name.setText(name.getText().toString());
         phoneno.setText(phoneno.getText().toString());

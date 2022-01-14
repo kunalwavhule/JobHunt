@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.PostJobData;
 import com.example.jobhunt.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +27,7 @@ import java.util.Date;
 
 public class InsertJobPostActivity extends AppCompatActivity {
     Toolbar toolbar;
-    EditText job_title,job_description,job_skill,job_salary,job_company,job_city,job_qualification,job_jobtypes,job_schedule,job_experience;
+    TextInputEditText job_title,job_description,job_skill,job_salary,job_company,job_city,job_qualification,job_jobtypes,job_schedule,job_experience;
     Button btn_post_job;
     //firebase
     FirebaseAuth auth;
