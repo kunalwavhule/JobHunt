@@ -128,18 +128,18 @@ mDatabase.addValueEventListener(postListener);
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String proname = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullname").getValue(String.class);
                 String phone_no = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("phoneno").getValue(String.class);
-                String JobProfile = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Profile").getValue(String.class);
-                String Company = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("CompanyName").getValue(String.class);
-                String job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("JobDescription").getValue(String.class);
-                String expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Experience").getValue(String.class);
-                String edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("EducationDec").getValue(String.class);
+                String applicantjobrole = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantjobrole").getValue(String.class);
+                String applicantcompany = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantcompany").getValue(String.class);
+                String applicantjobdescription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantjobdescription").getValue(String.class);
+                String applicantexperience = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantexperience").getValue(String.class);
+                String applicanteducationdesc = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicanteducationdesc").getValue(String.class);
                 name.setText(proname);
                 phoneno.setText(phone_no);
-                jobprofile.setText(JobProfile);
-                companyname.setText(Company);
-                jobDescription.setText(job_Decription);
-                w2w.setText(expduration);
-                edudec.setText(edu_dec);
+                jobprofile.setText(applicantjobrole);
+                companyname.setText(applicantcompany);
+                jobDescription.setText(applicantjobdescription);
+                w2w.setText(applicantexperience);
+                edudec.setText(applicanteducationdesc);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
