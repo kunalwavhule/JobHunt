@@ -43,7 +43,11 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
         holder.applicantname.setText(model.getFullname());
         holder.applicantphoneno.setText(model.getPhoneno());
         holder.applicantemail.setText(model.getEmail());
-        holder.applicantedu.setText(model.getEdu_des());
+        holder.applicanteducationdesc.setText(model.getApplicanteducationdesc());
+        holder.applicantjobrole.setText(model.getApplicantjobrole());
+        holder.applicantcompany.setText(model.getApplicantcompany());
+        holder.applicantjobdescription.setText(model.getApplicantjobdescription());
+        holder.applicantexperience.setText(model.getApplicantexperience());
         holder.Accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +104,8 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         TextView Company,city,jobtitle,des,applicantname,applicantphoneno,
-                applicantemail,applicantedu;
+                applicantemail,applicanteducationdesc,applicantjobrole,applicantcompany,
+                applicantjobdescription,applicantexperience;
         Button Accept,Reject;
 
         public myViewHolder(@NonNull View itemView) {
@@ -112,7 +117,11 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
             applicantname = itemView.findViewById(R.id.applicantname);
             applicantphoneno = itemView.findViewById(R.id.applicantphoneno);
             applicantemail = itemView.findViewById(R.id.applicantemail);
-            applicantedu = itemView.findViewById(R.id.applicantedu_dec);
+            applicanteducationdesc = itemView.findViewById(R.id.applicanteducationdesc);
+            applicantjobrole = itemView.findViewById(R.id.applicantjobrole);
+            applicantcompany = itemView.findViewById(R.id.applicantcompany);
+            applicantjobdescription = itemView.findViewById(R.id.applicantjobdescription);
+            applicantexperience = itemView.findViewById(R.id.applicantexperience);
             Accept = itemView.findViewById(R.id.acceptjob);
             Reject = itemView.findViewById(R.id.rejectjob);
 

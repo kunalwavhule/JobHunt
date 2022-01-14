@@ -37,7 +37,9 @@ public class ApplicantDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView recyclerView;
     private DatabaseReference mJob,mDatabase;
-    String phone_no,Company,name,JobProfile,job_Decription,expduration,edu_dec,id;
+    String phone_no,Company,name,JobProfile,job_Decription,expduration,email,id,
+            applicanteducationdesc,applicantjobrole,applicantcompany,
+            applicantjobdescription,applicantexperience;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +70,14 @@ public class ApplicantDashboard extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         name = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullname").getValue(String.class);
                         phone_no = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("phoneno").getValue(String.class);
-                        Company = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("CompanyName").getValue(String.class);
+                        email = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("email").getValue(String.class);
 
-                        JobProfile = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Profile").getValue(String.class);
-                        job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("JobDescription").getValue(String.class);
-                        expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("Experience").getValue(String.class);
-                        edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("EducationDec").getValue(String.class);
+                        applicantcompany = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantcompany").getValue(String.class);
+                        applicantjobrole = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantjobrole").getValue(String.class);
+                        applicantjobdescription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantjobdescription").getValue(String.class);
+                        applicantexperience = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantexperience").getValue(String.class);
+
+                        applicanteducationdesc = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicanteducationdesc").getValue(String.class);
 
                     }
                     @Override
@@ -100,11 +104,12 @@ public class ApplicantDashboard extends AppCompatActivity {
 
                         rap.put("fullname",name);
                         rap.put("phoneno",phone_no);
-                        rap.put("JobProfile",JobProfile);
-                        rap.put("CompanyName", Company);
-                        rap.put("JobDescription",job_Decription);
-                        rap.put("Experience",expduration);
-                        rap.put("EducationDec",edu_dec);
+                        rap.put("email",email);
+                        rap.put("applicantjobrole",applicantjobrole);
+                        rap.put("applicantcompany", applicantcompany);
+                        rap.put("applicantjobdescription",applicantjobdescription);
+                        rap.put("applicantexperience",applicantexperience);
+                        rap.put("applicanteducationdesc",applicanteducationdesc);
                         rap.put("uid",auth.getUid());
 
 
@@ -153,11 +158,12 @@ public class ApplicantDashboard extends AppCompatActivity {
 
                         rap.put("fullname",name);
                         rap.put("phoneno",phone_no);
-                        rap.put("JobProfile",JobProfile);
-                        rap.put("CompanyName", Company);
-                        rap.put("JobDescription",job_Decription);
-                        rap.put("Experience",expduration);
-                        rap.put("EducationDec",edu_dec);
+                        rap.put("email",email);
+                        rap.put("applicantjobrole",applicantjobrole);
+                        rap.put("applicantcompany", applicantcompany);
+                        rap.put("applicantjobdescription",applicantjobdescription);
+                        rap.put("applicantexperience",applicantexperience);
+                        rap.put("applicanteducationdesc",applicanteducationdesc);
                         rap.put("uid",auth.getUid());
                         rap.put("pushid",getRef(position).getKey());
                         FirebaseDatabase.getInstance().getReference().child("Applied Status").child(auth.getUid()).child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
