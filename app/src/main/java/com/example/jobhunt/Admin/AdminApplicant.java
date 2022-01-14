@@ -66,4 +66,6 @@ public class AdminApplicant extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
+
+
 }

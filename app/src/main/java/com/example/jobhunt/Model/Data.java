@@ -9,6 +9,12 @@ public class Data {
     String phoneno;
     String date;
     int UserTypes;
+    String applicantjobrole;
+    String applicantcompany;
+    String applicantjobdescription;
+    String applicantexperience;
+    String applicanteducationdesc;
+
 
     public Data() {
     }
@@ -21,6 +27,21 @@ public class Data {
         this.phoneno = phoneno;
         this.date = date;
         UserTypes = userTypes;
+    }
+
+    public Data(String id, String fullname, String email, String password, String phoneno, String date, int userTypes, String applicantjobrole, String applicantcompany, String applicantjobdescription, String applicantexperience, String applicanteducationdesc) {
+        this.id = id;
+        this.fullname = fullname;
+        this.email = email;
+        this.password = password;
+        this.phoneno = phoneno;
+        this.date = date;
+        UserTypes = userTypes;
+        this.applicantjobrole = applicantjobrole;
+        this.applicantcompany = applicantcompany;
+        this.applicantjobdescription = applicantjobdescription;
+        this.applicantexperience = applicantexperience;
+        this.applicanteducationdesc = applicanteducationdesc;
     }
 
     public String getId() {
@@ -77,5 +98,45 @@ public class Data {
 
     public void setUserTypes(int userTypes) {
         UserTypes = userTypes;
+    }
+
+    public String getApplicantjobrole() {
+        return applicantjobrole;
+    }
+
+    public void setApplicantjobrole(String applicantjobrole) {
+        this.applicantjobrole = applicantjobrole;
+    }
+
+    public String getApplicantcompany() {
+        return applicantcompany;
+    }
+
+    public void setApplicantcompany(String applicantcompany) {
+        this.applicantcompany = applicantcompany;
+    }
+
+    public String getApplicantjobdescription() {
+        return applicantjobdescription;
+    }
+
+    public void setApplicantjobdescription(String applicantjobdescription) {
+        this.applicantjobdescription = applicantjobdescription;
+    }
+
+    public String getApplicantexperience() {
+        return applicantexperience;
+    }
+
+    public void setApplicantexperience(String applicantexperience) {
+        this.applicantexperience = applicantexperience;
+    }
+
+    public String getApplicanteducationdesc() {
+        return applicanteducationdesc;
+    }
+
+    public void setApplicanteducationdesc(String applicanteducationdesc) {
+        this.applicanteducationdesc = applicanteducationdesc;
     }
 }

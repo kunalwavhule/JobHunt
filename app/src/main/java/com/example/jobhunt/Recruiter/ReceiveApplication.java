@@ -56,15 +56,7 @@ public class ReceiveApplication extends AppCompatActivity {
                         return true;
                     case R.id.receive:
                         return true;
-                    case R.id.selected:
-                        startActivity(new Intent(getApplicationContext(), RecruiterSelected.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), RecruiterProfile.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
+                 }
                 return false;
             }
         });

@@ -43,6 +43,7 @@
             android:layout_below="@+id/email"
             android:background="@drawable/edit_background"
             android:layout_marginTop="15dp"
+            android:inputType="textPassword"
             android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="10dp"
             android:hint="Password"
@@ -54,7 +55,7 @@
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
+            android:inputType="textPassword"
             android:layout_below="@+id/password"
             android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="10dp"
