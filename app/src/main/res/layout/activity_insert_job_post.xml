@@ -65,21 +65,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Qualification">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_qualification"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="20dp"
@@ -113,21 +98,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="@string/Experience">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_experience"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
 
 
 

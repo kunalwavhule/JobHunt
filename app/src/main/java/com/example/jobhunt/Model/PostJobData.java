@@ -11,17 +11,15 @@ public class PostJobData {
     String company;
      String city;
     String status;
-    String qualification;
     String jobtypes;
     String schedule;
-    String experience;
 
     public PostJobData() {
 
 
     }
 
-    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String city, String status, String qualification, String jobtypes, String schedule, String experience) {
+    public PostJobData(String title, String description, String skill, String salary, String id, String date, String pushid, String company, String city, String status,  String jobtypes, String schedule) {
         this.title = title;
         this.description = description;
         this.skill = skill;
@@ -32,11 +30,9 @@ public class PostJobData {
         this.company = company;
         this.city = city;
         this.status = status;
-        this.qualification = qualification;
         this.jobtypes = jobtypes;
         this.schedule = schedule;
-        this.experience = experience;
-    }
+       }
 
     public String getTitle() {
         return title;
@@ -118,13 +114,7 @@ public class PostJobData {
         this.status = status;
     }
 
-    public String getQualification() {
-        return qualification;
-    }
 
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
-    }
 
     public String getJobtypes() {
         return jobtypes;
@@ -142,11 +132,4 @@ public class PostJobData {
         this.schedule = schedule;
     }
 
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
 }
