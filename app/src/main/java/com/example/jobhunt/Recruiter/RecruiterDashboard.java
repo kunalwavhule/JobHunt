@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -91,21 +92,49 @@ public class RecruiterDashboard extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.logout,menu);
-        MenuItem logoutitem = menu.findItem(R.id.lagout);
-        logoutitem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.logout, menu);
+        MenuItem logout = menu.findItem(R.id.lagout);
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
+            public boolean onMenuItemClick(MenuItem item) {
                 auth.signOut();
                 startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return false;
             }
         });
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                txtSearch(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                txtSearch(s);
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
+
     }
 
-    public void ReceiveApplication(View view) {
-        startActivity(new Intent(getApplicationContext(),ReceiveApplication.class));
+    private void txtSearch(String str){
+
+        FirebaseRecyclerOptions<PostJobData> options =
+                new FirebaseRecyclerOptions.Builder<PostJobData>()
+                        .setQuery(mJobPost.orderByChild("title").startAt(str).endAt(str+"~"), PostJobData.class)
+                        .build();
+        postJobAdapter = new PostJobAdapter(options);
+        postJobAdapter.startListening();
+        recyclerView.setAdapter(postJobAdapter);
+
     }
+
+
 }
