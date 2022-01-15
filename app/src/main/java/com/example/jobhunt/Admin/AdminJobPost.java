@@ -32,6 +32,7 @@ public class AdminJobPost extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_job_post);
+        getSupportActionBar().setTitle("Posted Jobs");
 
         recyclerView = findViewById(R.id.rvajp);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

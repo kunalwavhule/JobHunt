@@ -20,6 +20,7 @@ public class AdminDashBoard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash_board);
+        getSupportActionBar().setTitle("Admin Dashboard");
     }
 
 

@@ -48,6 +48,7 @@ public class RecruiterProfile extends AppCompatActivity {
         companytypes = findViewById(R.id.companytypes);
         companydesc = findViewById(R.id.companydesc);
         companyopeninghours = findViewById(R.id.companyopeninghours);
+        getSupportActionBar().setTitle("Profile");
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.rbottomNavigation);

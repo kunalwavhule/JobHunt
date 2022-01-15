@@ -28,6 +28,7 @@ public class AdminApplicant extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_applicant);
+        getSupportActionBar().setTitle("Applicant Data");
         recyclerView = findViewById(R.id.rvaa);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();

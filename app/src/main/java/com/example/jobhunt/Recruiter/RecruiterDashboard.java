@@ -34,6 +34,7 @@ public class RecruiterDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter_dashboard);
+        getSupportActionBar().setTitle("Recruiter Dashboard");
         fabBtn = findViewById(R.id.fab_add);
         recyclerView = findViewById(R.id.recycler_job_post_id);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

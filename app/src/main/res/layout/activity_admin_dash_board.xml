@@ -5,22 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".Admin.AdminDashBoard">
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:text="Admin DashBoard" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/lightgray"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"/>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -87,13 +87,48 @@
 
 
 
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#D3CEDC"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/companyaddress"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_below="@+id/contact"
+            android:text="company address"
+            android:drawablePadding="10dp"/>
+        <TextView
+            android:id="@+id/companytypes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="companytypes"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/companyopeninghours"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/contact"
+            android:text="companyopeninghours"/>
+        <TextView
+            android:id="@+id/companydesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/contact"
+            android:text="companydesc"/>
         </LinearLayout>
 
-
-
-
     </LinearLayout>
-
-
-
 </androidx.cardview.widget.CardView>

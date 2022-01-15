@@ -41,6 +41,7 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        getSupportActionBar().setTitle("Applicant Profile");
         imageButton = findViewById(R.id.imageButton4);
         jobprofile = findViewById(R.id.jobname);
         company = findViewById(R.id.company);

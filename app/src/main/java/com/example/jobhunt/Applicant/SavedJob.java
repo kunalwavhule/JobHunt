@@ -31,6 +31,7 @@ public class SavedJob extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_job);
+        getSupportActionBar().setTitle("Saved Job");
         recyclerView = findViewById(R.id.Aprvsavejob);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();

@@ -35,6 +35,10 @@ public class RecruiterAdapter extends FirebaseRecyclerAdapter<Data,RecruiterAdap
         holder.email.setText(model.getEmail());
         holder.phoneno.setText(model.getPhoneno());
         holder.date.setText("Created Account  "+model.getDate());
+        holder.companyaddress.setText(model.getCompanyaddress());
+        holder.companytypes.setText("Industry : "+model.getCompanytypes());
+        holder.companydesc.setText("Description : "+model.getCompanydesc());
+        holder.companyopeninghours.setText("Opening time : "+model.getCompanyopeninghours());
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +73,7 @@ public class RecruiterAdapter extends FirebaseRecyclerAdapter<Data,RecruiterAdap
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView fullname, email,phoneno ,date, delete;
+        TextView fullname, email,phoneno ,date, delete,companyaddress,companytypes,companydesc,companyopeninghours;
         // Button delete;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +82,11 @@ public class RecruiterAdapter extends FirebaseRecyclerAdapter<Data,RecruiterAdap
             phoneno = itemView.findViewById(R.id.phonenoap);
             date = itemView.findViewById(R.id.dateap);
             delete = itemView.findViewById(R.id.deletebtn);
+            companyaddress = itemView.findViewById(R.id.companyaddress);
+            companytypes = itemView.findViewById(R.id.companytypes);
+            companydesc = itemView.findViewById(R.id.companydesc);
+            companyopeninghours = itemView.findViewById(R.id.companyopeninghours);
+
         }
     }
 }

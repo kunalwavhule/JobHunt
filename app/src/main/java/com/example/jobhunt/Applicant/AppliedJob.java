@@ -29,6 +29,7 @@ public class AppliedJob extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applied_job);
+        getSupportActionBar().setTitle("Applied Jobs");
         recyclerView = findViewById(R.id.aprvapplied);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();

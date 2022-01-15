@@ -45,6 +45,7 @@ public class ApplicantDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_dashboard);
+        getSupportActionBar().setTitle("Applicant Dashboard");
         recyclerView = findViewById(R.id.Aprecview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         auth = FirebaseAuth.getInstance();

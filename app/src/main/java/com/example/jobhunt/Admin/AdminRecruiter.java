@@ -32,6 +32,8 @@ public class AdminRecruiter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_recruiter);
+        getSupportActionBar().setTitle("Recruiter Data");
+
 
         recyclerView = findViewById(R.id.rvar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
