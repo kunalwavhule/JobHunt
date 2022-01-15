@@ -11,4 +11,8 @@
         android:icon="@drawable/ic_receive_application"
         android:title="receive" />
 
+    <item
+        android:id="@+id/rprofile"
+        android:icon="@drawable/about"
+        android:title="Profile" />
 </menu>

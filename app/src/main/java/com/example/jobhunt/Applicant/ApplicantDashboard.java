@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,8 +38,8 @@ public class ApplicantDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView recyclerView;
     private DatabaseReference mJob,mDatabase;
-    String phone_no,Company,name,JobProfile,job_Decription,expduration,email,id,
-            applicanteducationdesc,applicantjobrole,applicantcompany,
+    String phone_no,name,email,applicanteducationdesc,
+            applicantjobrole,applicantcompany,
             applicantjobdescription,applicantexperience;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,10 @@ public class ApplicantDashboard extends AppCompatActivity {
                 holder.skill.setText(model.getSkill());
                 holder.salary.setText(model.getSalary());
                 holder.date.setText("posted job :\t"+model.getDate());
+                holder.city.setText(model.getCity());
+                holder.jobtypes.setText(model.getJobtypes());
+                holder.schedule.setText(model.getSchedule());
+                holder.company.setText(model.getCompany());
 
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 ValueEventListener postListener = new ValueEventListener() {
@@ -91,31 +96,12 @@ public class ApplicantDashboard extends AppCompatActivity {
                     public void onClick(View v) {
                         Map<String,Object> map = new HashMap<>();
                         map.put(auth.getUid(),"1");
-                        Map<String,Object> rap = new HashMap<>();
-                        rap.put("skill",model.getSkill());
-                        rap.put("city",model.getCity());
-                        rap.put("company",model.getCompany());
-                        rap.put("date",model.getDate());
-                        rap.put("salary",model.getSalary());
-                        rap.put("skill",model.getSkill());
-                        rap.put("title",model.getTitle());
-                        rap.put("description",model.getDescription());
-
-                        rap.put("fullname",name);
-                        rap.put("phoneno",phone_no);
-                        rap.put("email",email);
-                        rap.put("applicantjobrole",applicantjobrole);
-                        rap.put("applicantcompany", applicantcompany);
-                        rap.put("applicantjobdescription",applicantjobdescription);
-                        rap.put("applicantexperience",applicantexperience);
-                        rap.put("applicanteducationdesc",applicanteducationdesc);
-                        rap.put("uid",auth.getUid());
-
 
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(holder.title.getContext(),"Job Saved Suceessfully"+model.getTitle(),Toast.LENGTH_LONG).show();
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -123,13 +109,7 @@ public class ApplicantDashboard extends AppCompatActivity {
                                 Toast.makeText(holder.title.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
                             }
                         });
-                        FirebaseDatabase.getInstance().getReference("Save").child(model.getId()).child(auth.getUid()).updateChildren(rap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Toast.makeText(holder.title.getContext(),"Update data on Firebase Save",Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
+                                            }
                 });
                 holder.btnApply.setOnClickListener(new View.OnClickListener() {
                     @Override

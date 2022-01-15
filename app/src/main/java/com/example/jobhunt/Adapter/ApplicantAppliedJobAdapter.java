@@ -44,7 +44,7 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
         holder.salary.setText(model.getSalary());
         holder.date.setText("posted job :\t"+model.getDate());
         holder.status.setText("Application Status :\t"+model.getStatus());
-        holder.btnUnApply.setOnClickListener(new View.OnClickListener() {
+      /*  holder.btnUnApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -64,7 +64,7 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
                     }
                 });
             }
-        });
+        });*/
 
     }
 
@@ -76,8 +76,8 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView title,description, skill,salary,date,pushid,status;
-        Button btnUnApply;
+        TextView title,description, skill,salary,date,status;
+     //   Button btnUnApply;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.titletxt);
@@ -85,9 +85,8 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
             skill = itemView.findViewById(R.id.skilltxt);
             salary = itemView.findViewById(R.id.salarytxt);
             date = itemView.findViewById(R.id.datetxt);
-            pushid = itemView.findViewById(R.id.pushid);
-            status = itemView.findViewById(R.id.status);
-            btnUnApply = itemView.findViewById(R.id.unapplybtn);
+            status = itemView.findViewById(R.id.statustxt);
+       //     btnUnApply = itemView.findViewById(R.id.unapplybtn);
         }
     }
 }

@@ -61,11 +61,20 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJob
                 TextInputEditText des = view1.findViewById(R.id.desupdate);
                 TextInputEditText skill = view1.findViewById(R.id.skillupdate);
                 TextInputEditText salary = view1.findViewById(R.id.salaryupdate);
+                TextInputEditText companyname = view1.findViewById(R.id.companyupdate);
+                TextInputEditText jobtypes = view1.findViewById(R.id.jobtypesupdate);
+                TextInputEditText schedule = view1.findViewById(R.id.scheduleupdate);
+                TextInputEditText city = view1.findViewById(R.id.cityupdate);
+
                 Button btnUpdate = view1.findViewById(R.id.updatebtn);
                 title.setText(model.getTitle());
                 des.setText(model.getDescription());
                 skill.setText(model.getSkill());
                 salary.setText(model.getSalary());
+                companyname.setText(model.getCompany());
+                jobtypes.setText(model.getJobtypes());
+                schedule.setText(model.getSchedule());
+                city.setText(model.getCity());
                 dialogPlus.show();
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -75,6 +84,11 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJob
                         map.put("description",des.getText().toString());
                         map.put("skill",skill.getText().toString());
                         map.put("salary",salary.getText().toString());
+                        map.put("company",companyname.getText().toString());
+                        map.put("jobtypes",jobtypes.getText().toString());
+                        map.put("schedule",schedule.getText().toString());
+                        map.put("city",city.getText().toString());
+
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
