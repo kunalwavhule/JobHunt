@@ -1,194 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="10dp">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titletxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datetxt"
+            android:text="Seniour Software Engineer"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/companytxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datetxt"
+            android:text="TCS India"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/locationtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datetxt"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="Titile of job"
+            android:textColor="#000000"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_baseline_edit_road_24" />
+
+
+
+            <TextView
+                android:id="@+id/skilltxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/datetxt"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="Android, Java, Kotlin"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_description_24" />
+
+            <TextView
+                android:id="@+id/descriptiontxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin,Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/salarytxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datetxt"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_baseline_money_24"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="$50000"
+            android:textColor="#000000"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_jobtypes" />
+
+            <TextView
+                android:id="@+id/job_jobtypes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="full time"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_schedule" />
+
+            <TextView
+                android:id="@+id/job_schedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="morning shift 9:00am - 6:00pm (monday to sunday)"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/datetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datetxt"
+            android:layout_marginTop="5dp"
+            android:gravity="end"
+            android:layout_gravity="end"
+            android:text="Posted on - Jan 9, 2020"
+            android:textColor="#000000"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e0e0e0" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/telEmail"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/editbtn"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Job Title">
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Job Description">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_description"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:lines="5"
-                    android:gravity="start"/>
+                    app:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_baseline_edit_24" />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Company Name">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_company"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="start"/>
+                    android:layout_marginStart="10dp"
+                    android:text="Edit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#e0e0e0" />
+
+            <LinearLayout
+                android:id="@+id/deletebtn"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Qualification">
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_qualification"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="start"/>
+                    app:tint="#FF0000"
+                    android:src="@drawable/ic_baseline_delete_24" />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Job Types">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_jobtypes"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="start"/>
+                    android:layout_marginStart="10dp"
+                    android:text="Delete"
+                    android:textColor="#FF0000"
+                    android:textSize="14sp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Schedule">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_schedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="@string/Experience">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_experience"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="City">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_city"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Skill">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_skill"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:startIconTint="@color/colorPrimary"
-                android:hint="Salary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/job_salary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Post Job"
-                android:textColor="#FFFFFF"
-                android:id="@+id/btn_job_post"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:theme="@style/Button"/>
+            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -58,13 +58,22 @@
         <entry key="..\:/JobHunt/app/src/main/res/menu/search.xml" value="0.1" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable-v24/delete.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_add.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_apply.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_account_balance_wallet_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_money_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_school_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_smartphone_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_save_job.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_admin_applicant.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.1" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_admin_job_post.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_admin_recruiter.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_applicant_dashboard.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_applied_job.xml" value="0.1796875" />
-        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_insert_job_post.xml" value="0.1" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_insert_job_post.xml" value="0.22" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_login.xml" value="0.11458333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_profile.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_receive_application.xml" value="0.1796875" />
@@ -73,7 +82,10 @@
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_selected.xml" value="0.14666666666666667" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/applicant_applied_job_item.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/applicant_item.xml" value="0.14666666666666667" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/applicant_post_job_item.xml" value="0.14038876889848811" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/applicant_save_job_item.xml" value="0.22" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/post_job_item.xml" value="0.3333333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/profile_experience_item.xml" value="0.14666666666666667" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/receive_application_item.xml" value="0.4466666666666667" />

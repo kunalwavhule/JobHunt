@@ -45,6 +45,7 @@
             android:text="Titile of job"
             android:textColor="#000000"
             android:textSize="11sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,6 +110,54 @@
             android:text="$50000"
             android:textColor="#000000"
             android:textSize="11sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_jobtypes" />
+
+            <TextView
+                android:id="@+id/job_jobtypes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="full time"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_schedule" />
+
+            <TextView
+                android:id="@+id/job_schedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="morning shift 9:00am - 6:00pm (monday to sunday)"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/datetxt"

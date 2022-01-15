@@ -47,6 +47,8 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJob
         holder.date.setText(model.getDate());
         holder.company.setText(model.getCompany());
         holder.city.setText(model.getCity());
+        holder.jobtypes.setText(model.getJobtypes());
+        holder.schedule.setText(model.getSchedule());
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +122,7 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJob
         return new myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView title,description, skill,salary,date,company,city;
+        TextView title,description, skill,salary,date,company,city,jobtypes,schedule;
         LinearLayout btnDelete,btnEdit;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -131,6 +133,8 @@ public class PostJobAdapter extends FirebaseRecyclerAdapter<PostJobData, PostJob
             date = itemView.findViewById(R.id.datetxt);
             company = itemView.findViewById(R.id.companytxt);
             city = itemView.findViewById(R.id.locationtxt);
+            jobtypes = itemView.findViewById(R.id.job_jobtypes);
+            schedule = itemView.findViewById(R.id.job_schedule);
             btnEdit = itemView.findViewById(R.id.editbtn);
             btnDelete = itemView.findViewById(R.id.deletebtn);
         }

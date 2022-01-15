@@ -44,8 +44,8 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Data, UserAdapter.myVie
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.fullname.getContext());
                 builder.setTitle("Are you sure");
-                builder.setMessage("Deleted data cann't be undo");
-                builder.setMessage("deleted data cann't be undo");
+                builder.setMessage("Deleted data can't be undo");
+                builder.setMessage("deleted data can't be undo");
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

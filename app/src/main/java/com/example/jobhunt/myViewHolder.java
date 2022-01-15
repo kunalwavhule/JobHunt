@@ -2,6 +2,7 @@ package com.example.jobhunt;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +14,9 @@ public class myViewHolder extends RecyclerView.ViewHolder{
     public TextView skill;
     public TextView salary;
     public TextView date;
-    public TextView pushid;
-    public Button btnApply;
-    public Button btnSave;
+    public LinearLayout btnApply,btnSave;
+  //  public Button btnApply;
+  //  public Button btnSave;
     public myViewHolder(@NonNull View itemView) {
         super(itemView);
         title = itemView.findViewById(R.id.titletxt);
@@ -25,6 +26,5 @@ public class myViewHolder extends RecyclerView.ViewHolder{
         date = itemView.findViewById(R.id.datetxt);
         btnApply = itemView.findViewById(R.id.applybtn);
         btnSave = itemView.findViewById(R.id.savebtn);
-        pushid = itemView.findViewById(R.id.pushid);
     }
 }

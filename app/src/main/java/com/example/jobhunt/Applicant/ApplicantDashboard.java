@@ -62,7 +62,6 @@ public class ApplicantDashboard extends AppCompatActivity {
                 holder.skill.setText(model.getSkill());
                 holder.salary.setText(model.getSalary());
                 holder.date.setText("posted job :\t"+model.getDate());
-                holder.pushid.setText(getRef(position).getKey());
 
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 ValueEventListener postListener = new ValueEventListener() {
