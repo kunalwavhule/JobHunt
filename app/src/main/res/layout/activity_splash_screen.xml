@@ -4,27 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:gravity="center_vertical"
     android:background="#ffffff"
     tools:context=".SplashScreen">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="right"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginRight="10dp"
-        android:text="JOB"
-        android:textColor="#037ffc"/>
-    <TextView
+        android:layout_marginTop="230dp"
+        android:src="@drawable/logo"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="HUNT"
-        android:textColor="#000000"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="250dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:text="JOB"
+            android:textColor="#037ffc"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="HUNT"
+            android:textColor="#000000"/>
+    </LinearLayout>
 </LinearLayout>

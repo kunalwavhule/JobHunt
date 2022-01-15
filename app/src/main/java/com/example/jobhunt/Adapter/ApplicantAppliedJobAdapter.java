@@ -42,30 +42,10 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
         holder.description.setText(model.getDescription());
         holder.skill.setText(model.getSkill());
         holder.salary.setText(model.getSalary());
+        holder.company.setText(model.getCompany());
+        holder.city.setText(model.getCity());
         holder.date.setText("posted job :\t"+model.getDate());
         holder.status.setText("Application Status :\t"+model.getStatus());
-      /*  holder.btnUnApply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-              Map<String,Object> map = new HashMap<>();
-                map.put(FirebaseAuth.getInstance().getUid(),"2");
-                FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(holder.title.getContext(),"Application Cancel Successfully",Toast.LENGTH_LONG).show();
-                        FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).child(FirebaseAuth.getInstance().getUid()).removeValue();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(holder.title.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });*/
-
     }
 
     @NonNull
@@ -76,17 +56,17 @@ public class ApplicantAppliedJobAdapter extends FirebaseRecyclerAdapter<PostJobD
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView title,description, skill,salary,date,status;
-     //   Button btnUnApply;
+        TextView title,description, skill,salary,date,status,company,city;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.titletxt);
             description = itemView.findViewById(R.id.descriptiontxt);
             skill = itemView.findViewById(R.id.skilltxt);
             salary = itemView.findViewById(R.id.salarytxt);
+            company = itemView.findViewById(R.id.companytxt);
+            city = itemView.findViewById(R.id.locationtxt);
             date = itemView.findViewById(R.id.datetxt);
             status = itemView.findViewById(R.id.statustxt);
-       //     btnUnApply = itemView.findViewById(R.id.unapplybtn);
         }
     }
 }

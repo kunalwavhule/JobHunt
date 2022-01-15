@@ -74,9 +74,10 @@
                 android:layout_marginTop="10dp"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_below="@+id/line"
                 android:orientation="vertical"
+                android:background="#C9DDD3"
                 android:layout_height="wrap_content">
 
 
@@ -87,6 +88,10 @@
                         android:layout_below="@id/line"
                         android:layout_marginLeft="10dp"
                         android:text="@string/Name"
+                        android:drawableLeft="@drawable/user"
+                        android:paddingLeft="10dp"
+                        android:drawablePadding="10dp"
+
                         android:textColor="@color/black"
                         android:textStyle="italic" />
 
@@ -95,6 +100,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/applicantname"
+                        android:drawableLeft="@drawable/mobile_number"
+                        android:paddingLeft="10dp"
+                        android:drawablePadding="10dp"
                         android:layout_marginLeft="10dp"
                         android:text="@string/phonenumber"
                         android:textColor="@color/black"
@@ -103,6 +111,10 @@
                     <TextView
                         android:id="@+id/applicantemail"
                         android:layout_width="wrap_content"
+                        android:drawableLeft="@drawable/email"
+                        android:paddingLeft="10dp"
+                        android:drawablePadding="10dp"
+
                         android:layout_height="wrap_content"
                         android:layout_below="@id/applicantphoneno"
                         android:layout_marginLeft="10dp"
@@ -114,6 +126,10 @@
                         android:id="@+id/applicanteducationdesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_baseline_school_24"
+                        android:paddingLeft="10dp"
+                        android:drawablePadding="10dp"
+
                         android:layout_below="@id/applicantemail"
                         android:layout_marginLeft="10dp"
                         android:text="@string/EducationDec"
@@ -123,6 +139,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_work_24"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+
                     android:id="@+id/applicantjobrole"
                     android:text="applicantjobrole"
                     android:textStyle="italic"
@@ -133,6 +153,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_work_24"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
                     android:id="@+id/applicantcompany"
                     android:text="applicantcompany"
                     android:textStyle="italic"
@@ -145,6 +168,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/applicantjobdescription"
                     android:text="applicantjobdescription"
+                    android:drawableLeft="@drawable/ic_baseline_edit_road_24"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+
                     android:textStyle="italic"
                     android:textColor="@color/black"
                     android:layout_below="@id/applicantphoneno"
@@ -154,6 +181,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/applicantexperience"
+                    android:drawableLeft="@drawable/job_role"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+
                     android:text="applicantexperience"
                     android:textStyle="italic"
                     android:textColor="#040404"

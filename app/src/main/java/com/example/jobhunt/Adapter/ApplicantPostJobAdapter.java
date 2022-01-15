@@ -47,6 +47,9 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
         holder.description.setText(model.getDescription());
         holder.skill.setText(model.getSkill());
         holder.salary.setText(model.getSalary());
+        holder.city.setText(model.getCity());
+        holder.schedule.setText(model.getSchedule());
+        holder.company.setText(model.getCompany());
         holder.date.setText("posted job :\t"+model.getDate());
 
        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -156,7 +159,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
         return new myViewHolder(view);
     }
     public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView title,description, skill,salary,date;
+        TextView title,description, skill,salary,date,company,city,schedule;
         LinearLayout btnApply,btnSave;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -165,6 +168,9 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
             skill = itemView.findViewById(R.id.skilltxt);
             salary = itemView.findViewById(R.id.salarytxt);
             date = itemView.findViewById(R.id.datetxt);
+            schedule = itemView.findViewById(R.id.job_schedule);
+            city = itemView.findViewById(R.id.locationtxt);
+            company = itemView.findViewById(R.id.companytxt);
             btnApply = itemView.findViewById(R.id.applybtn);
             btnSave = itemView.findViewById(R.id.savebtn);
         }
