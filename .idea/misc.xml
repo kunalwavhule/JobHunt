@@ -68,6 +68,7 @@
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_school_24.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_baseline_smartphone_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_phonenumber.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_save_job.xml" value="0.19583333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_schedule.xml" value="0.18703703703703703" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/drawable/ic_selected.xml" value="0.18703703703703703" />
@@ -101,6 +102,7 @@
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/profile_experience_item.xml" value="0.14666666666666667" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/receive_application_item.xml" value="0.4466666666666667" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/recruiter_item.xml" value="0.3333333333333333" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/recruiter_profile_edit_item.xml" value="0.22" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/test.xml" value="0.22" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/updateform.xml" value="0.16666666666666666" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/menu/navigation.xml" value="0.1796875" />
@@ -118,7 +120,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.3333333333333333" />
+        <option name="scale" value="0.22" />
       </ProjectState>
     </option>
   </component>
