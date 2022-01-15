@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jobhunt.Adapter.RecruiterAdapter;
 import com.example.jobhunt.Adapter.UserAdapter;
 import com.example.jobhunt.Login;
 import com.example.jobhunt.Model.Data;
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AdminRecruiter extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    UserAdapter userAdapter;
+    RecruiterAdapter recruiterAdapter;
     FirebaseAuth auth;
     private DatabaseReference mJobPost;
 
@@ -46,8 +47,8 @@ public class AdminRecruiter extends AppCompatActivity {
                         .setQuery(mJobPost.orderByChild("userTypes").equalTo(1), Data.class)
                         .build();
 
-        userAdapter = new UserAdapter(options);
-        recyclerView.setAdapter(userAdapter);
+        recruiterAdapter = new RecruiterAdapter(options);
+        recyclerView.setAdapter(recruiterAdapter);
 
 
     }
@@ -56,13 +57,13 @@ public class AdminRecruiter extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        userAdapter.startListening();
+        recruiterAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        userAdapter.stopListening();
+        recruiterAdapter.stopListening();
     }
 
 

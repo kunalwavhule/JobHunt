@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dateap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="date"
+            android:layout_gravity="right"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/fullnameap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Full Name"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/deletebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true"
+
+                    android:backgroundTint="#F4511E"
+                    android:background="@drawable/delete"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/emailap"
+                    android:text="Email id"
+                    android:textSize="20sp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/email"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/fullnameap"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phonenoap"
+                    android:text="Phone Number"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:drawablePadding="10dp"
+                    android:drawableLeft="@drawable/mobile_number"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/emailap"
+                    android:layout_marginLeft="10dp"/>
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
