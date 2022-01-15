@@ -73,7 +73,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
             }
         };
         mDatabase.addValueEventListener(postListener);
-
+        // Unsave the application
         holder.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +82,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
                 FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(holder.title.getContext(),"job is unsaved"+model.getTitle(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(holder.title.getContext(),"job is unsaved "+model.getTitle(),Toast.LENGTH_LONG).show();
 
                         FirebaseDatabase.getInstance().getReference().child("Job Post").child(getRef(position).getKey()).child(FirebaseAuth.getInstance().getUid()).removeValue();
 
@@ -133,7 +133,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
                 FirebaseDatabase.getInstance().getReference().child("Applied Status").child(auth.getUid()).child(getRef(position).getKey()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(holder.title.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                        Toast.makeText(holder.title.getContext(),"Application is successfully Applied for "+model.getTitle(),Toast.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -145,7 +145,7 @@ public class ApplicantPostJobAdapter extends FirebaseRecyclerAdapter<PostJobData
                 FirebaseDatabase.getInstance().getReference("Applied").child(model.getId()).child(auth.getUid()).updateChildren(rap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(holder.title.getContext(),"Update data on Firebase Save",Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(holder.title.getContext(),"Update data on Firebase Save",Toast.LENGTH_LONG).show();
                     }
                 });
             }

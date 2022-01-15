@@ -58,12 +58,12 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
                 FirebaseDatabase.getInstance().getReference().child("Applied Status").child(model.getUid()).child(model.getPushid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(holder.applicantname.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                        Toast.makeText(holder.applicantname.getContext(),"Application is Accepted  "+model.getFullname(),Toast.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(holder.applicantname.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(holder.applicantname.getContext(),"Error while updating",Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -80,7 +80,7 @@ public class ReceiveAppliationAdapter extends FirebaseRecyclerAdapter<ReceiveApp
                 FirebaseDatabase.getInstance().getReference().child("Applied Status").child(model.getUid()).child(model.getPushid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(holder.applicantname.getContext(),"data is updated",Toast.LENGTH_LONG).show();
+                        Toast.makeText(holder.applicantname.getContext(),"Application Rejected  "+model.getFullname(),Toast.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
