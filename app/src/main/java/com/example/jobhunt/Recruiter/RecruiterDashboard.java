@@ -135,6 +135,4 @@ public class RecruiterDashboard extends AppCompatActivity {
         recyclerView.setAdapter(postJobAdapter);
 
     }
-
-
 }
