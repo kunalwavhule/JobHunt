@@ -6,25 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Applicant.ApplicantDashboard">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/jobsearch"
-        android:background="@drawable/search_background"
-        android:hint="job search"
-        android:drawableLeft="@drawable/search"
-        android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
-        android:layout_margin="20dp"
-        android:textSize="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Aprecview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="70dp"
-
         android:layout_marginBottom="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
