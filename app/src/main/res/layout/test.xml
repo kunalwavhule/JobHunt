@@ -1,244 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="6dp"
-    app:cardElevation="5dp"
-    app:cardUseCompatPadding="true"
-    app:contentPadding="10dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
-            android:id="@+id/titletxt"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/datetxt"
-            android:text="Seniour Software Engineer"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/companytxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/datetxt"
-            android:text="TCS India"
-            android:textColor="#000000"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/locationtxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/datetxt"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_baseline_location_on_24"
-            android:drawablePadding="10dp"
-            android:gravity="center_vertical"
-            android:text="Titile of job"
-            android:textColor="#000000"
-            android:textSize="11sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="top"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/ic_baseline_edit_road_24" />
-
-
-
-            <TextView
-                android:id="@+id/skilltxt"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/datetxt"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="Android, Java, Kotlin"
-                android:textColor="#000000"
-                android:textSize="11sp" />
+                android:background="@color/purple_500"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="top"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_description_24" />
-
-            <TextView
-                android:id="@+id/descriptiontxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin,Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin, Android, Java, Kotlin"
-                android:textColor="#000000"
-                android:textSize="11sp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/salarytxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/datetxt"
-            android:layout_marginTop="5dp"
-            android:drawableLeft="@drawable/ic_baseline_money_24"
-            android:drawablePadding="10dp"
-            android:gravity="center_vertical"
-            android:text="$50000"
-            android:textColor="#000000"
-            android:textSize="11sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:gravity="top"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_jobtypes" />
-
-            <TextView
-                android:id="@+id/job_jobtypes"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="full time"
-                android:textColor="#000000"
-                android:textSize="11sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:gravity="top"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_schedule" />
-
-            <TextView
-                android:id="@+id/job_schedule"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="morning shift 9:00am - 6:00pm (monday to sunday)"
-                android:textColor="#000000"
-                android:textSize="11sp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/datetxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/datetxt"
-            android:layout_marginTop="5dp"
-            android:gravity="end"
-            android:layout_gravity="end"
-            android:text="Posted on - Jan 9, 2020"
-            android:textColor="#000000"
-            android:textSize="11sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#e0e0e0" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/editbtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:tint="@color/colorPrimary"
-                    android:src="@drawable/ic_baseline_edit_24" />
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/proname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Palak Soni"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/jobname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Software Engineer - Global"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageButton4"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datetxt"
+                    android:id="@+id/locationtxt"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="Canada"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Edit"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp" />
+                    android:id="@+id/ExpDuration"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_shopping_bag_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="3 Years"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
 
-            </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datetxt"
+                    android:id="@+id/proemail"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_email_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="abcd@gmail.co,"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/prophoneno"
+                    android:layout_below="@+id/datetxt"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_phone_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="88888888"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#e0e0e0" />
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/shadow" />
 
-            <LinearLayout
-                android:id="@+id/deletebtn"
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <ImageView
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:tint="#FF0000"
-                    android:src="@drawable/ic_baseline_delete_24" />
+                    android:text="Profile Summary"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/role"
+                    android:layout_height="wrap_content"
+                    android:text="A passopnate web developer with aroung 4 years of experience in app developmen. gaving goof grip in deffrent tech like java and java script. Beside all tech know also gave goof client coom and lider skiikks"
+                    android:textSize="12sp"
+                    android:textColor="#000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Delete"
-                    android:textColor="#FF0000"
-                    android:textSize="14sp" />
+                    android:text="Key Skills "
+                    android:layout_marginTop="20dp"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/education"
+                    android:text="Android, Core JAVam Google API, Payment Gatewatm FireBase, Kotlin, React KS, Angular JS"
+                    android:textSize="12sp"
+                    android:textColor="#000000"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-</androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

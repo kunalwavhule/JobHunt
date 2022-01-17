@@ -88,7 +88,7 @@
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_applied_job.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_insert_job_post.xml" value="0.3177842565597668" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_login.xml" value="0.11458333333333333" />
-        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_profile.xml" value="0.14666666666666667" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_receive_application.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.1" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/activity_recruiter_profile.xml" value="0.22" />
@@ -105,10 +105,11 @@
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/receive_application_item.xml" value="0.3023758099352052" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/recruiter_item.xml" value="0.315028901734104" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/recruiter_profile_edit_item.xml" value="0.22" />
-        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/test.xml" value="0.22" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/test.xml" value="0.3333333333333333" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/layout/updateform.xml" value="0.16666666666666666" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/menu/navigation.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/menu/reqruiternavigation.xml" value="0.1796875" />
+        <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/menu/search.xml" value="0.1796875" />
         <entry key="..\:/raman intership/JumpIn/JobHunt/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
       </map>
     </option>

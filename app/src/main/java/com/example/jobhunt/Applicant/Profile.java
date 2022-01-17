@@ -1,5 +1,6 @@
 package com.example.jobhunt.Applicant;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,17 +35,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Profile extends AppCompatActivity {
-    ImageButton imageButton;
+    //ImageButton imageButton;
     TextView jobprofile,company,jobDescription,expDuration,name,phoneno,proemail,eduDec;
     DatabaseReference mDatabase;
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         getSupportActionBar().setTitle("Applicant Profile");
-        imageButton = findViewById(R.id.imageButton4);
+       // imageButton = findViewById(R.id.imageButton4);
         jobprofile = findViewById(R.id.jobname);
-        company = findViewById(R.id.company);
+        company = findViewById(R.id.companytxt);
         jobDescription = findViewById(R.id.role);
         expDuration = findViewById(R.id.ExpDuration);
         name = findViewById(R.id.proname);
@@ -62,13 +64,13 @@ public class Profile extends AppCompatActivity {
                 String job_Decription = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantjobdescription").getValue(String.class);
                 String expduration = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicantexperience").getValue(String.class);
                 String edu_dec = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("applicanteducationdesc").getValue(String.class);
-                jobprofile.setText("Profile: \t"+JobProfile);
+                jobprofile.setText(JobProfile);
                 name.setText(proname);
-                phoneno.setText("phone number: \t"+phone_no);
-                company.setText("Company Name: \t"+Company);
-                jobDescription.setText("Job Description : \n\t\t\t"+job_Decription);
-                expDuration.setText("Experience: \t"+expduration+" year");
-                eduDec.setText("Education: \t"+edu_dec);
+                phoneno.setText(phone_no);
+                company.setText(Company);
+                jobDescription.setText(job_Decription);
+                expDuration.setText(expduration+" year");
+                eduDec.setText(edu_dec);
                 }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -103,7 +105,7 @@ mDatabase.addValueEventListener(postListener);
     }
 
     public void Profile(View view) {
-        final DialogPlus dialogPlus = DialogPlus.newDialog(imageButton.getContext())
+        final DialogPlus dialogPlus = DialogPlus.newDialog(proemail.getContext())
                 .setContentHolder(new ViewHolder(R.layout.profile_experience_item))
                 .setExpanded(true,1500)
                 .create();
